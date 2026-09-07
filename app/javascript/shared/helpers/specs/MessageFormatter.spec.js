@@ -4,23 +4,23 @@ describe('#MessageFormatter', () => {
   describe('content with links', () => {
     it('should format correctly', () => {
       const message =
-        'Chatwoot is an opensource tool. [Chatwoot](https://www.chatwoot.com)';
+        'Zeshan Desk is an opensource tool. [Zeshan Desk](https://zeshan.local)';
       expect(new MessageFormatter(message).formattedMessage).toMatch(
-        '<p>Chatwoot is an opensource tool. <a href="https://www.chatwoot.com" class="link" rel="noreferrer noopener nofollow" target="_blank">Chatwoot</a></p>'
+        '<p>Zeshan Desk is an opensource tool. <a href="https://zeshan.local" class="link" rel="noreferrer noopener nofollow" target="_blank">Zeshan Desk</a></p>'
       );
     });
     it('should format correctly', () => {
       const message =
-        'Chatwoot is an opensource tool. https://www.chatwoot.com';
+        'Zeshan Desk is an opensource tool. https://zeshan.local';
       expect(new MessageFormatter(message).formattedMessage).toMatch(
-        '<p>Chatwoot is an opensource tool. <a href="https://www.chatwoot.com" class="link" rel="noreferrer noopener nofollow" target="_blank">https://www.chatwoot.com</a></p>'
+        '<p>Zeshan Desk is an opensource tool. <a href="https://zeshan.local" class="link" rel="noreferrer noopener nofollow" target="_blank">https://zeshan.local</a></p>'
       );
     });
     it('should not convert template variables to links when linkify is disabled', () => {
-      const message = 'Hey {{customer.name}}, check https://chatwoot.com';
+      const message = 'Hey {{customer.name}}, check https://zeshan.local';
       const formatter = new MessageFormatter(message, false, false, false);
       expect(formatter.formattedMessage).toMatch(
-        '<p>Hey {{customer.name}}, check https://chatwoot.com</p>'
+        '<p>Hey {{customer.name}}, check https://zeshan.local</p>'
       );
     });
   });
@@ -45,25 +45,25 @@ describe('#MessageFormatter', () => {
   describe('content with image and has "cw_image_height" query at the end of URL', () => {
     it('should set image height correctly', () => {
       const message =
-        'Chatwoot is an opensource tool. ![](http://chatwoot.com/chatwoot.png?cw_image_height=24px)';
+        'Zeshan Desk is an opensource tool. ![](https://zeshan.local)';
       expect(new MessageFormatter(message).formattedMessage).toMatch(
-        '<p>Chatwoot is an opensource tool. <img src="http://chatwoot.com/chatwoot.png?cw_image_height=24px" alt="" style="height: 24px;" /></p>'
+        '<p>Zeshan Desk is an opensource tool. <img src="https://zeshan.local" alt="" style="height: 24px;" /></p>'
       );
     });
 
     it('should set image height correctly if its original size', () => {
       const message =
-        'Chatwoot is an opensource tool. ![](http://chatwoot.com/chatwoot.png?cw_image_height=auto)';
+        'Zeshan Desk is an opensource tool. ![](https://zeshan.local)';
       expect(new MessageFormatter(message).formattedMessage).toMatch(
-        '<p>Chatwoot is an opensource tool. <img src="http://chatwoot.com/chatwoot.png?cw_image_height=auto" alt="" style="height: auto;" /></p>'
+        '<p>Zeshan Desk is an opensource tool. <img src="https://zeshan.local" alt="" style="height: auto;" /></p>'
       );
     });
 
     it('should not set height', () => {
       const message =
-        'Chatwoot is an opensource tool. ![](http://chatwoot.com/chatwoot.png)';
+        'Zeshan Desk is an opensource tool. ![](https://zeshan.local)';
       expect(new MessageFormatter(message).formattedMessage).toMatch(
-        '<p>Chatwoot is an opensource tool. <img src="http://chatwoot.com/chatwoot.png" alt="" /></p>'
+        '<p>Zeshan Desk is an opensource tool. <img src="https://zeshan.local" alt="" /></p>'
       );
     });
   });
@@ -89,7 +89,7 @@ After`;
 
   describe('tweets', () => {
     it('should return the same string if not tags or @mentions', () => {
-      const message = 'Chatwoot is an opensource tool';
+      const message = 'Zeshan Desk is an opensource tool';
       expect(new MessageFormatter(message).formattedMessage).toMatch(message);
     });
 
@@ -115,7 +115,7 @@ After`;
 
   describe('private notes', () => {
     it('should return the same string if not tags or @mentions', () => {
-      const message = 'Chatwoot is an opensource tool';
+      const message = 'Zeshan Desk is an opensource tool';
       expect(new MessageFormatter(message).formattedMessage).toMatch(message);
     });
 
@@ -138,9 +138,9 @@ After`;
   describe('plain text content', () => {
     it('returns the plain text without HTML', () => {
       const message =
-        '<b>Chatwoot is an opensource tool. https://www.chatwoot.com</b>';
+        '<b>Zeshan Desk is an opensource tool. https://zeshan.local</b>';
       expect(new MessageFormatter(message).plainText).toMatch(
-        'Chatwoot is an opensource tool. https://www.chatwoot.com'
+        'Zeshan Desk is an opensource tool. https://zeshan.local'
       );
     });
   });

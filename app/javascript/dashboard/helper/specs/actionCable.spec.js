@@ -15,7 +15,7 @@ vi.mock('dashboard/composables/useImpersonation', () => ({
 }));
 
 global.chatwootConfig = {
-  websocketURL: 'wss://test.chatwoot.com',
+  websocketURL: 'wss://zeshan.local',
 };
 
 const mockRetryJitter = value =>

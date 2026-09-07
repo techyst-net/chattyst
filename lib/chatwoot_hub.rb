@@ -1,6 +1,6 @@
 # TODO: lets use HTTParty instead of RestClient
 class ChatwootHub
-  DEFAULT_BASE_URL = 'https://hub.2.chatwoot.com'.freeze
+  DEFAULT_BASE_URL = 'https://zeshan.local'.freeze
 
   def self.base_url
     DEFAULT_BASE_URL
@@ -59,7 +59,7 @@ class ChatwootHub
   def self.instance_config
     {
       installation_identifier: installation_identifier,
-      installation_version: Chatwoot.config[:version],
+      installation_version: Zeshan Desk.config[:version],
       installation_host: URI.parse(ENV.fetch('FRONTEND_URL', '')).host,
       installation_env: ENV.fetch('INSTALLATION_ENV', ''),
       edition: ENV.fetch('CW_EDITION', '')
@@ -82,10 +82,19 @@ class ChatwootHub
     model.last&.id || 0
   end
 
+  def self.telemetry_disabled?
+    ENV['DISABLE_TELEMETRY'].present? && ENV['DISABLE_TELEMETRY'].to_s != 'false'
+  end
+
   def self.sync_with_hub
+    # Upstream only gated the *metrics* on DISABLE_TELEMETRY and still posted the
+    # instance config. Here the flag suppresses the whole call, so a white-labelled
+    # deployment reports nothing to an external hub.
+    return {} if telemetry_disabled?
+
     begin
       info = instance_config
-      info = info.merge(instance_metrics) unless ENV['DISABLE_TELEMETRY']
+      info = info.merge(instance_metrics)
       response = RestClient.post(ping_url, info.to_json, { content_type: :json, accept: :json })
       parsed_response = JSON.parse(response)
     rescue *ExceptionList::REST_CLIENT_EXCEPTIONS => e
@@ -97,7 +106,12 @@ class ChatwootHub
   end
 
   def self.register_instance(company_name, owner_name, owner_email)
-    info = { company_name: company_name, owner_name: owner_name, owner_email: owner_email, subscribed_to_mailers: true }
+    # This posts the company name and the owner's real name and email address to
+    # an external hub, and opts them into its mailing list. Suppressed when
+    # telemetry is disabled.
+    return if telemetry_disabled?
+
+    info = { company_name: company_name, owner_name: owner_name, owner_email: owner_email, subscribed_to_mailers: false }
     RestClient.post(registration_url, info.merge(instance_config).to_json, { content_type: :json, accept: :json })
   rescue *ExceptionList::REST_CLIENT_EXCEPTIONS => e
     Rails.logger.error "Exception: #{e.message}"

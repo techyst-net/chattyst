@@ -215,7 +215,7 @@ describe('useDetectedChannels', () => {
       ]);
     });
 
-    it('hides Meta channels on Chatwoot Cloud during the Meta restriction', () => {
+    it('hides Meta channels on Zeshan Desk Cloud during the Meta restriction', () => {
       const { displayedChannels } = mountComposable({
         features: {
           channel_instagram: true,
@@ -256,7 +256,7 @@ describe('useDetectedChannels', () => {
       ]);
     });
 
-    it('keeps disabled TikTok in the secondary channel catalog on Chatwoot Cloud', () => {
+    it('keeps disabled TikTok in the secondary channel catalog on Zeshan Desk Cloud', () => {
       const { displayedChannels, remainingChannels } = mountComposable({
         features: { channel_instagram: true, channel_tiktok: false },
         isOnChatwootCloud: true,

@@ -63,7 +63,7 @@ if Sidekiq.server? && ActiveModel::Type::Boolean.new.cast(ENV.fetch('ENABLE_SIDE
 
   Speedshop::Cloudwatch.configure do |cw|
     cw.client = Aws::CloudWatch::Client.new(region: cloudwatch_region, credentials: cloudwatch_credentials)
-    cw.namespaces[:sidekiq] = ENV.fetch('SIDEKIQ_CLOUDWATCH_NAMESPACE', 'Chatwoot/Sidekiq')
+    cw.namespaces[:sidekiq] = ENV.fetch('SIDEKIQ_CLOUDWATCH_NAMESPACE', 'Zeshan Desk/Sidekiq')
     cw.interval = cloudwatch_interval
     cw.metrics[:sidekiq] = %i[QueueLatency QueueSize EnqueuedJobs Utilization]
     cw.enabled_environments = [cw.environment]

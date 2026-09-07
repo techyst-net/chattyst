@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Description: Install and manage a Chatwoot installation.
+# Description: Install and manage a Zeshan Desk installation.
 # OS: Ubuntu 20.04 LTS, 22.04 LTS, 24.04 LTS
 # Script Version: 3.5.0
 # Run this script as root
@@ -21,7 +21,7 @@ LONGOPTS=console,debug,help,install,Install:,logs:,restart,ssl,upgrade,Upgrade:,
 OPTIONS=cdhiI:l:rsuU:wvWK
 CWCTL_VERSION="3.5.0"
 pg_pass=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 15 ; echo '')
-CHATWOOT_HUB_URL="https://hub.2.chatwoot.com/events"
+CHATWOOT_HUB_URL="https://zeshan.local"
 
 # if user does not specify an option
 if [ "$#" -eq 0 ]; then
@@ -182,12 +182,12 @@ function exit_handler() {
 #   None
 ##############################################################################
 function get_domain_info() {
-  read -rp 'Enter the domain/subdomain for Chatwoot (e.g., chatwoot.domain.com): ' domain_name
+  read -rp 'Enter the domain/subdomain for Zeshan Desk (e.g., chatwoot.domain.com): ' domain_name
   read -rp 'Enter an email address for LetsEncrypt to send reminders when your SSL certificate is up for renewal: ' le_email
   cat << EOF
 
 This script will generate SSL certificates via LetsEncrypt and
-serve Chatwoot at https://$domain_name.
+serve Zeshan Desk at https://$domain_name.
 Proceed further once you have pointed your DNS to the IP of the instance.
 
 EOF
@@ -357,7 +357,7 @@ EOF
 }
 
 ##############################################################################
-# Install Chatwoot
+# Install Zeshan Desk
 # This includes setting up ruby, cloning repo and installing dependencies.
 # Globals:
 #   pg_pass
@@ -413,7 +413,7 @@ EOF
 }
 
 ##############################################################################
-# Setup Chatwoot systemd services and cwctl CLI
+# Setup Zeshan Desk systemd services and cwctl CLI
 # Globals:
 #   DEPLOYMENT_TYPE
 # Arguments:
@@ -567,17 +567,17 @@ function ssl_success_message() {
     cat << EOF
 
 ***************************************************************************
-Woot! Woot!! Chatwoot server installation is complete.
+Woot! Woot!! Zeshan Desk server installation is complete.
 The server will be accessible at https://$domain_name
 
-Join the community at https://chatwoot.com/community?utm_source=cwctl
+Join the community at https://zeshan.local
 ***************************************************************************
 
 EOF
 }
 
 function cwctl_message() {
-  echo $'\U0001F680 Try out the all new Chatwoot CLI tool to manage your installation.'
+  echo $'\U0001F680 Try out the all new Zeshan Desk CLI tool to manage your installation.'
   echo $'\U0001F680 Type "cwctl --help" to learn more.'
 }
 
@@ -592,7 +592,7 @@ function cwctl_message() {
 #   None
 ##############################################################################
 function get_cw_version() {
-  CW_VERSION=$(curl -s https://app.chatwoot.com/api | python3 -c 'import sys,json;data=json.loads(sys.stdin.read()); print(data["version"])')
+  CW_VERSION=$(curl -s https://zeshan.local | python3 -c 'import sys,json;data=json.loads(sys.stdin.read()); print(data["version"])')
 }
 
 ##############################################################################
@@ -610,7 +610,7 @@ function install() {
   cat << EOF
 
 ***************************************************************************
-              Chatwoot Installation (v$CW_VERSION)
+              Zeshan Desk Installation (v$CW_VERSION)
 ***************************************************************************
 
 For more verbose logs, open up a second terminal and follow along using,
@@ -619,7 +619,7 @@ For more verbose logs, open up a second terminal and follow along using,
 EOF
 
   sleep 3
-  read -rp 'Would you like to configure a domain and SSL for Chatwoot?(yes or no): ' configure_webserver
+  read -rp 'Would you like to configure a domain and SSL for Zeshan Desk?(yes or no): ' configure_webserver
 
   if [ "$configure_webserver" == "yes" ]; then
     get_domain_info
@@ -655,7 +655,7 @@ EOF
     echo "➥ 5/9 Skipping database setup."
   fi
 
-  echo "➥ 6/9 Installing Chatwoot. This takes a long while."
+  echo "➥ 6/9 Installing Zeshan Desk. This takes a long while."
   setup_chatwoot &>> "${LOG_FILE}"
 
   if [ "$install_pg_redis" != "no" ]; then
@@ -676,13 +676,13 @@ EOF
 ➥ 9/9 Skipping SSL/TLS setup.
 
 ***************************************************************************
-Woot! Woot!! Chatwoot server installation is complete.
+Woot! Woot!! Zeshan Desk server installation is complete.
 The server will be accessible at http://$public_ip:3000
 
 To configure a domain and SSL certificate, follow the guide at
-https://www.chatwoot.com/docs/deployment/deploy-chatwoot-in-linux-vm?utm_source=cwctl
+https://zeshan.local
 
-Join the community at https://chatwoot.com/community?utm_source=cwctl
+Join the community at https://zeshan.local
 ***************************************************************************
 
 EOF
@@ -740,7 +740,7 @@ function help() {
 
   cat <<EOF
 Usage: cwctl [OPTION]...
-Install and manage your Chatwoot installation.
+Install and manage your Zeshan Desk installation.
 
 Example: cwctl -i master
 Example: cwctl -i --web-only     (for web server ASG)
@@ -755,10 +755,10 @@ Example: cwctl --logs worker
 Example: cwctl -c
 
 Installation/Upgrade:
-  -i, --install             Install the latest stable version of Chatwoot
-  -I BRANCH                 Install Chatwoot from a git branch
-  -u, --upgrade             Upgrade Chatwoot to the latest stable version
-  -U BRANCH                 Upgrade Chatwoot from a git branch (EXPERIMENTAL)
+  -i, --install             Install the latest stable version of Zeshan Desk
+  -I BRANCH                 Install Zeshan Desk from a git branch
+  -u, --upgrade             Upgrade Zeshan Desk to the latest stable version
+  -U BRANCH                 Upgrade Zeshan Desk from a git branch (EXPERIMENTAL)
   -s, --ssl                 Fetch and install SSL certificates using LetsEncrypt
   -w, --webserver           Install and configure Nginx webserver with SSL
   -W, --web-only            Install only the web server (for ASG deployment)
@@ -767,8 +767,8 @@ Installation/Upgrade:
 
 Management:
   -c, --console             Open ruby console
-  -l, --logs                View logs from Chatwoot. Supported values include web/worker.
-  -r, --restart             Restart Chatwoot server
+  -l, --logs                View logs from Zeshan Desk. Supported values include web/worker.
+  -r, --restart             Restart Zeshan Desk server
 
 Miscellaneous:
   -d, --debug               Show debug messages
@@ -779,13 +779,13 @@ Exit status:
 Returns 0 if successful; non-zero otherwise.
 
 Report bugs at https://github.com/chatwoot/chatwoot/issues
-Get help, https://chatwoot.com/community?utm_source=cwctl
+Get help, https://zeshan.local
 
 EOF
 }
 
 ##############################################################################
-# Get Chatwoot web/worker logs (-l/--logs)
+# Get Zeshan Desk web/worker logs (-l/--logs)
 # Globals:
 #   None
 # Arguments:
@@ -880,7 +880,7 @@ function upgrade_redis() {
     return
   fi
 
-  echo "Upgrading Redis to v7+ for Rails 7 support(Chatwoot v2.17+)"
+  echo "Upgrading Redis to v7+ for Rails 7 support(Zeshan Desk v2.17+)"
 
   curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor --yes -o /usr/share/keyrings/redis-archive-keyring.gpg
   echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
@@ -925,7 +925,7 @@ function upgrade_node() {
 }
 
 ##############################################################################
-# Install pnpm - this replaces yarn starting from Chatwoot 4.0
+# Install pnpm - this replaces yarn starting from Zeshan Desk 4.0
 # Globals:
 #   None
 # Arguments:
@@ -960,7 +960,7 @@ EOF
 function upgrade() {
   cwctl_upgrade_check
   get_cw_version
-  echo "Upgrading Chatwoot to v$CW_VERSION (branch: $BRANCH)"
+  echo "Upgrading Zeshan Desk to v$CW_VERSION (branch: $BRANCH)"
 
   # Warning for non-master branch upgrades
   if [ "$BRANCH" != "master" ]; then
@@ -989,7 +989,7 @@ EOF
 
    # Check if CW_VERSION is 4.0 or above
   if [[ "$(printf '%s\n' "$CW_VERSION" "4.0" | sort -V | head -n 1)" == "4.0" ]]; then
-    echo "Chatwoot v4.0 and above requires pgvector support in PostgreSQL."
+    echo "Zeshan Desk v4.0 and above requires pgvector support in PostgreSQL."
     read -p "Does your postgres support pgvector and want to proceed with the upgrade? [y/N]: " user_input
     user_input=${user_input:-Y}
     if [[ "$user_input" =~ ^([yY][eE][sS]|[yY])$ ]]; then
@@ -1008,7 +1008,7 @@ EOF
 
   sudo -i -u chatwoot << EOF
 
-  # Navigate to the Chatwoot directory
+  # Navigate to the Zeshan Desk directory
   cd chatwoot
 
   # Pull the latest version of the specified branch
@@ -1066,7 +1066,7 @@ EOF
 }
 
 ##############################################################################
-# Restart Chatwoot server (-r/--restart)
+# Restart Zeshan Desk server (-r/--restart)
 # Globals:
 #   None
 # Arguments:
@@ -1088,7 +1088,7 @@ function restart() {
 }
 
 ##############################################################################
-# Convert existing Chatwoot deployment to different type (--convert)
+# Convert existing Zeshan Desk deployment to different type (--convert)
 # Globals:
 #   DEPLOYMENT_TYPE
 # Arguments:
@@ -1097,11 +1097,11 @@ function restart() {
 #   None
 ##############################################################################
 function convert_deployment() {
-  echo "Converting Chatwoot deployment to: $DEPLOYMENT_TYPE"
+  echo "Converting Zeshan Desk deployment to: $DEPLOYMENT_TYPE"
 
-  # Check if Chatwoot is installed
+  # Check if Zeshan Desk is installed
   if [ ! -d "/home/chatwoot/chatwoot" ]; then
-    echo "Chatwoot installation not found. Use --install first."
+    echo "Zeshan Desk installation not found. Use --install first."
     exit 1
   fi
 
@@ -1145,7 +1145,7 @@ function report_event() {
   local event_name="$1"
   local event_data="$2"
 
-  CHATWOOT_HUB_URL="https://hub.2.chatwoot.com/events"
+  CHATWOOT_HUB_URL="https://zeshan.local"
 
   # get installation identifier
   local installation_identifier=$(get_installation_identifier)
@@ -1266,7 +1266,7 @@ function install_packaging() {
 #   None
 ##############################################################################
 function upgrade_cwctl() {
-    wget https://get.chatwoot.app/linux/install.sh -O /usr/local/bin/cwctl > /dev/null 2>&1 && chmod +x /usr/local/bin/cwctl
+    wget https://zeshan.local -O /usr/local/bin/cwctl > /dev/null 2>&1 && chmod +x /usr/local/bin/cwctl
 }
 
 ##############################################################################
