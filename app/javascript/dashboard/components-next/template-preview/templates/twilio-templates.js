@@ -129,18 +129,18 @@ export const twilioTemplates = [
     template_type: 'quick_reply',
   },
   {
-    body: 'What type of Chatwoot installation are you using? Select "Chatwoot Cloud" if you are using app.chatwoot.com, otherwise select "Self-hosted Chatwoot".',
+    body: 'What type of Zeshan Desk installation are you using? Select "Zeshan Desk Cloud" if you are using zeshan.local, otherwise select "Self-hosted Zeshan Desk".',
     types: {
       'twilio/quick-reply': {
-        body: 'What type of Chatwoot installation are you using? Select "Chatwoot Cloud" if you are using app.chatwoot.com, otherwise select "Self-hosted Chatwoot".',
+        body: 'What type of Zeshan Desk installation are you using? Select "Zeshan Desk Cloud" if you are using zeshan.local, otherwise select "Self-hosted Zeshan Desk".',
         actions: [
           {
-            id: 'Chatwoot Cloud_payload',
-            title: 'Chatwoot Cloud',
+            id: 'Zeshan Desk Cloud_payload',
+            title: 'Zeshan Desk Cloud',
           },
           {
             id: 'Self-hosted Chatwoot_payload',
-            title: 'Self-hosted Chatwoot',
+            title: 'Self-hosted Zeshan Desk',
           },
         ],
       },

@@ -8,11 +8,11 @@ describe('PortalHelper', () => {
   describe('buildPortalURL', () => {
     it('returns the correct url', () => {
       window.chatwootConfig = {
-        hostURL: 'https://app.chatwoot.com',
-        helpCenterURL: 'https://help.chatwoot.com',
+        hostURL: 'https://zeshan.local',
+        helpCenterURL: 'https://zeshan.local',
       };
       expect(buildPortalURL('handbook')).toEqual(
-        'https://help.chatwoot.com/hc/handbook'
+        'https://zeshan.local'
       );
       window.chatwootConfig = {};
     });
@@ -21,19 +21,19 @@ describe('PortalHelper', () => {
   describe('buildPortalArticleURL', () => {
     it('returns the correct url', () => {
       window.chatwootConfig = {
-        hostURL: 'https://app.chatwoot.com',
-        helpCenterURL: 'https://help.chatwoot.com',
+        hostURL: 'https://zeshan.local',
+        helpCenterURL: 'https://zeshan.local',
       };
       expect(
         buildPortalArticleURL('handbook', 'culture', 'fr', 'article-slug')
-      ).toEqual('https://help.chatwoot.com/hc/handbook/articles/article-slug');
+      ).toEqual('https://zeshan.local');
       window.chatwootConfig = {};
     });
 
     it('returns the correct url with custom domain', () => {
       window.chatwootConfig = {
-        hostURL: 'https://app.chatwoot.com',
-        helpCenterURL: 'https://help.chatwoot.com',
+        hostURL: 'https://zeshan.local',
+        helpCenterURL: 'https://zeshan.local',
       };
       expect(
         buildPortalArticleURL(
@@ -48,8 +48,8 @@ describe('PortalHelper', () => {
 
     it('handles https in custom domain correctly', () => {
       window.chatwootConfig = {
-        hostURL: 'https://app.chatwoot.com',
-        helpCenterURL: 'https://help.chatwoot.com',
+        hostURL: 'https://zeshan.local',
+        helpCenterURL: 'https://zeshan.local',
       };
       expect(
         buildPortalArticleURL(
@@ -64,12 +64,12 @@ describe('PortalHelper', () => {
 
     it('uses hostURL when helpCenterURL is not available', () => {
       window.chatwootConfig = {
-        hostURL: 'https://app.chatwoot.com',
+        hostURL: 'https://zeshan.local',
         helpCenterURL: '',
       };
       expect(
         buildPortalArticleURL('handbook', 'culture', 'fr', 'article-slug')
-      ).toEqual('https://app.chatwoot.com/hc/handbook/articles/article-slug');
+      ).toEqual('https://zeshan.local');
     });
   });
 

@@ -78,7 +78,7 @@ describe('InboxChannelsDialog channel availability', () => {
     expect(wrapper.find('button').exists()).toBe(true);
   });
 
-  it('shows the grid when Meta inbox creation is disabled on Chatwoot Cloud', async () => {
+  it('shows the grid when Meta inbox creation is disabled on Zeshan Desk Cloud', async () => {
     isOnChatwootCloud.value = true;
     isMetaInboxCreationDisabled.value = true;
     window.chatwootConfig = { fbAppId: 'fb-app' };
@@ -91,7 +91,7 @@ describe('InboxChannelsDialog channel availability', () => {
     expect(wrapper.find('button').exists()).toBe(true);
   });
 
-  it('shows TikTok as disabled when account access is disabled on Chatwoot Cloud', () => {
+  it('shows TikTok as disabled when account access is disabled on Zeshan Desk Cloud', () => {
     isOnChatwootCloud.value = true;
     isTiktokEnabled.value = false;
     window.chatwootConfig = { tiktokAppId: 'tiktok-app' };

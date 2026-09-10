@@ -49,7 +49,7 @@ class Whatsapp::UserIdRotationService
   end
 
   # Resolve through previous identifiers first. Current identifiers are only a fallback for a
-  # replay or for the case where a normal message reached Chatwoot before the lifecycle event.
+  # replay or for the case where a normal message reached Zeshan Desk before the lifecycle event.
   # Conflicting identifiers must remain reviewable; they are never merged automatically.
   def resolve_contact(rotations, current_source_ids)
     previous_source_ids = rotations.map(&:first)

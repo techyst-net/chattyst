@@ -13,29 +13,29 @@ describe('#Campaigns Helper', () => {
     it('returns correct value if a valid URL is passed', () => {
       expect(
         isPatternMatchingWithURL(
-          'https://chatwoot.com/pricing*',
-          'https://chatwoot.com/pricing/'
+          'https://zeshan.local*',
+          'https://zeshan.local'
         )
       ).toBe(true);
 
       expect(
         isPatternMatchingWithURL(
-          'https://*.chatwoot.com/pricing/',
-          'https://app.chatwoot.com/pricing/'
+          'https://*.zeshan.local/pricing/',
+          'https://zeshan.local'
         )
       ).toBe(true);
 
       expect(
         isPatternMatchingWithURL(
-          'https://{*.}?chatwoot.com/pricing?test=true',
-          'https://app.chatwoot.com/pricing/?test=true'
+          'https://{*.}?zeshan.local/pricing?test=true',
+          'https://zeshan.local'
         )
       ).toBe(true);
 
       expect(
         isPatternMatchingWithURL(
-          'https://{*.}?chatwoot.com/pricing*\\?*',
-          'https://chatwoot.com/pricing/?test=true'
+          'https://{*.}?zeshan.local/pricing*\\?*',
+          'https://zeshan.local'
         )
       ).toBe(true);
     });
@@ -48,13 +48,13 @@ describe('#Campaigns Helper', () => {
           id: 1,
           timeOnPage: 3,
           triggerOnlyDuringBusinessHours: false,
-          url: 'https://www.chatwoot.com/pricing',
+          url: 'https://zeshan.local',
         },
         {
           id: 2,
           triggerOnlyDuringBusinessHours: false,
           timeOnPage: 6,
-          url: 'https://www.chatwoot.com/about',
+          url: 'https://zeshan.local',
         },
       ]);
     });
@@ -67,23 +67,23 @@ describe('#Campaigns Helper', () => {
             {
               id: 1,
               timeOnPage: 3,
-              url: 'https://www.chatwoot.com/pricing',
+              url: 'https://zeshan.local',
               triggerOnlyDuringBusinessHours: false,
             },
             {
               id: 2,
               timeOnPage: 6,
-              url: 'https://www.chatwoot.com/about',
+              url: 'https://zeshan.local',
               triggerOnlyDuringBusinessHours: false,
             },
           ],
-          currentURL: 'https://www.chatwoot.com/about/',
+          currentURL: 'https://zeshan.local',
         })
       ).toStrictEqual([
         {
           id: 2,
           timeOnPage: 6,
-          url: 'https://www.chatwoot.com/about',
+          url: 'https://zeshan.local',
           triggerOnlyDuringBusinessHours: false,
         },
       ]);
@@ -95,24 +95,24 @@ describe('#Campaigns Helper', () => {
             {
               id: 1,
               timeOnPage: 3,
-              url: 'https://www.chatwoot.com/pricing',
+              url: 'https://zeshan.local',
               triggerOnlyDuringBusinessHours: false,
             },
             {
               id: 2,
               timeOnPage: 6,
-              url: 'https://www.chatwoot.com/about',
+              url: 'https://zeshan.local',
               triggerOnlyDuringBusinessHours: true,
             },
           ],
-          currentURL: 'https://www.chatwoot.com/about/',
+          currentURL: 'https://zeshan.local',
           isInBusinessHours: true,
         })
       ).toStrictEqual([
         {
           id: 2,
           timeOnPage: 6,
-          url: 'https://www.chatwoot.com/about',
+          url: 'https://zeshan.local',
           triggerOnlyDuringBusinessHours: true,
         },
       ]);
@@ -124,17 +124,17 @@ describe('#Campaigns Helper', () => {
             {
               id: 1,
               timeOnPage: 3,
-              url: 'https://www.chatwoot.com/pricing',
+              url: 'https://zeshan.local',
               triggerOnlyDuringBusinessHours: true,
             },
             {
               id: 2,
               timeOnPage: 6,
-              url: 'https://www.chatwoot.com/about',
+              url: 'https://zeshan.local',
               triggerOnlyDuringBusinessHours: true,
             },
           ],
-          currentURL: 'https://www.chatwoot.com/about/',
+          currentURL: 'https://zeshan.local',
           isInBusinessHours: false,
         })
       ).toStrictEqual([]);

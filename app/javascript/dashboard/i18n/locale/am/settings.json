@@ -768,7 +768,7 @@
     }
   },
   "CREATE_ACCOUNT": {
-    "NO_ACCOUNT_WARNING": "እንደሆነ! ማንኛውም Chatwoot መለያ አልተገኘም። እባክዎ ለመቀጠል አዲስ መለያ ይፍጠሩ።.",
+    "NO_ACCOUNT_WARNING": "እንደሆነ! ማንኛውም Zeshan Desk መለያ አልተገኘም። እባክዎ ለመቀጠል አዲስ መለያ ይፍጠሩ።.",
     "NEW_ACCOUNT": "አዲስ አካውንት",
     "SELECTOR_SUBTITLE": "አዲስ አካውንት ፍጠር",
     "API": {

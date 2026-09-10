@@ -28,7 +28,7 @@ class Channel::Whatsapp < ApplicationRecord
 
   self.table_name = 'channel_whatsapp'
   EDITABLE_ATTRS = [:phone_number, :provider, { provider_config: {} }].freeze
-  encrypts :business_management_token if Chatwoot.encryption_configured?
+  encrypts :business_management_token if Zeshan Desk.encryption_configured?
 
   # default at the moment is 360dialog lets change later.
   PROVIDERS = %w[default whatsapp_cloud].freeze

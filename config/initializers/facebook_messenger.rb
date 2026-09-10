@@ -38,7 +38,7 @@ class ChatwootFbProvider < Facebook::Messenger::Configuration::Providers::Base
   end
 
   def bot
-    Chatwoot::Bot
+    Zeshan Desk::Bot
   end
 end
 
