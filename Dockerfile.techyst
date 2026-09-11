@@ -1,0 +1,17 @@
+# Chatwoot's own image, with the branded assets layered on.
+#
+# Chatwoot supports rebranding through configuration — INSTALLATION_NAME,
+# BRAND_NAME, LOGO, LOGO_THUMBNAIL and friends, set in .env and overridable in
+# the Super Admin console. That is the supported path, so there is no reason to
+# recompile its Vue and SCSS just to change a logo. Compiling from source also
+# means running `rake assets:precompile`, which is the slowest and most
+# failure-prone step in the whole build.
+FROM chatwoot/chatwoot:latest
+
+# The files LOGO / LOGO_THUMBNAIL point at.
+COPY public/brand-assets/ /app/public/brand-assets/
+COPY public/android-icon-192x192.png public/android-icon-144x144.png \
+     public/android-icon-96x96.png  public/android-icon-72x72.png \
+     public/android-icon-48x48.png  public/android-icon-36x36.png \
+     public/apple-touch-icon.png    public/apple-touch-icon-precomposed.png \
+     /app/public/
