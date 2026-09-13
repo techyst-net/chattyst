@@ -13,7 +13,7 @@ class AccountDashboard < Administrate::BaseDashboard
                                    limits: AccountLimitsField
                                  }
 
-                                 # Only show manually managed features in Zeshan Desk Cloud deployment
+                                 # Only show manually managed features in Chatyst Desk Cloud deployment
                                  attributes[:manually_managed_features] = ManuallyManagedFeaturesField if ChatwootApp.chatwoot_cloud?
 
                                  # Add all_features last so it appears after manually_managed_features
@@ -125,7 +125,7 @@ class AccountDashboard < Administrate::BaseDashboard
     attrs = super + [limits: {}, captain_models: {}]
     attrs += %i[suspension_category suspension_reason] if action == 'update'
 
-    # Add manually_managed_features to permitted attributes only for Zeshan Desk Cloud
+    # Add manually_managed_features to permitted attributes only for Chatyst Desk Cloud
     attrs << { manually_managed_features: [] } if ChatwootApp.chatwoot_cloud?
 
     attrs

@@ -39,13 +39,13 @@ describe('#buildPopoutURL', () => {
   it('returns popout URL', () => {
     expect(
       buildPopoutURL({
-        origin: 'https://zeshan.local',
+        origin: 'https://chatyst.techyst.net',
         conversationCookie: 'random-jwt-token',
         websiteToken: 'random-website-token',
         locale: 'ar',
       })
     ).toEqual(
-      'https://zeshan.local'
+      'https://chatyst.techyst.net'
     );
   });
 });

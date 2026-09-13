@@ -54,9 +54,9 @@ const globalConfig = computed(() => store.getters['globalConfig/get']);
 
 const termsLink = computed(() =>
   t('REGISTER.TERMS_ACCEPT')
-    .replace('https://zeshan.local', globalConfig.value.termsURL)
+    .replace('https://chatyst.techyst.net', globalConfig.value.termsURL)
     .replace(
-      'https://zeshan.local',
+      'https://chatyst.techyst.net',
       globalConfig.value.privacyURL
     )
 );

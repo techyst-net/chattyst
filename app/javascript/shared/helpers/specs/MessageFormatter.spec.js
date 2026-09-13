@@ -4,23 +4,23 @@ describe('#MessageFormatter', () => {
   describe('content with links', () => {
     it('should format correctly', () => {
       const message =
-        'Zeshan Desk is an opensource tool. [Zeshan Desk](https://zeshan.local)';
+        'Chatyst Desk is an opensource tool. [Chatyst Desk](https://chatyst.techyst.net)';
       expect(new MessageFormatter(message).formattedMessage).toMatch(
-        '<p>Zeshan Desk is an opensource tool. <a href="https://zeshan.local" class="link" rel="noreferrer noopener nofollow" target="_blank">Zeshan Desk</a></p>'
+        '<p>Chatyst Desk is an opensource tool. <a href="https://chatyst.techyst.net" class="link" rel="noreferrer noopener nofollow" target="_blank">Chatyst Desk</a></p>'
       );
     });
     it('should format correctly', () => {
       const message =
-        'Zeshan Desk is an opensource tool. https://zeshan.local';
+        'Chatyst Desk is an opensource tool. https://chatyst.techyst.net';
       expect(new MessageFormatter(message).formattedMessage).toMatch(
-        '<p>Zeshan Desk is an opensource tool. <a href="https://zeshan.local" class="link" rel="noreferrer noopener nofollow" target="_blank">https://zeshan.local</a></p>'
+        '<p>Chatyst Desk is an opensource tool. <a href="https://chatyst.techyst.net" class="link" rel="noreferrer noopener nofollow" target="_blank">https://chatyst.techyst.net</a></p>'
       );
     });
     it('should not convert template variables to links when linkify is disabled', () => {
-      const message = 'Hey {{customer.name}}, check https://zeshan.local';
+      const message = 'Hey {{customer.name}}, check https://chatyst.techyst.net';
       const formatter = new MessageFormatter(message, false, false, false);
       expect(formatter.formattedMessage).toMatch(
-        '<p>Hey {{customer.name}}, check https://zeshan.local</p>'
+        '<p>Hey {{customer.name}}, check https://chatyst.techyst.net</p>'
       );
     });
   });
@@ -45,25 +45,25 @@ describe('#MessageFormatter', () => {
   describe('content with image and has "cw_image_height" query at the end of URL', () => {
     it('should set image height correctly', () => {
       const message =
-        'Zeshan Desk is an opensource tool. ![](https://zeshan.local)';
+        'Chatyst Desk is an opensource tool. ![](https://chatyst.techyst.net)';
       expect(new MessageFormatter(message).formattedMessage).toMatch(
-        '<p>Zeshan Desk is an opensource tool. <img src="https://zeshan.local" alt="" style="height: 24px;" /></p>'
+        '<p>Chatyst Desk is an opensource tool. <img src="https://chatyst.techyst.net" alt="" style="height: 24px;" /></p>'
       );
     });
 
     it('should set image height correctly if its original size', () => {
       const message =
-        'Zeshan Desk is an opensource tool. ![](https://zeshan.local)';
+        'Chatyst Desk is an opensource tool. ![](https://chatyst.techyst.net)';
       expect(new MessageFormatter(message).formattedMessage).toMatch(
-        '<p>Zeshan Desk is an opensource tool. <img src="https://zeshan.local" alt="" style="height: auto;" /></p>'
+        '<p>Chatyst Desk is an opensource tool. <img src="https://chatyst.techyst.net" alt="" style="height: auto;" /></p>'
       );
     });
 
     it('should not set height', () => {
       const message =
-        'Zeshan Desk is an opensource tool. ![](https://zeshan.local)';
+        'Chatyst Desk is an opensource tool. ![](https://chatyst.techyst.net)';
       expect(new MessageFormatter(message).formattedMessage).toMatch(
-        '<p>Zeshan Desk is an opensource tool. <img src="https://zeshan.local" alt="" /></p>'
+        '<p>Chatyst Desk is an opensource tool. <img src="https://chatyst.techyst.net" alt="" /></p>'
       );
     });
   });
@@ -89,7 +89,7 @@ After`;
 
   describe('tweets', () => {
     it('should return the same string if not tags or @mentions', () => {
-      const message = 'Zeshan Desk is an opensource tool';
+      const message = 'Chatyst Desk is an opensource tool';
       expect(new MessageFormatter(message).formattedMessage).toMatch(message);
     });
 
@@ -115,7 +115,7 @@ After`;
 
   describe('private notes', () => {
     it('should return the same string if not tags or @mentions', () => {
-      const message = 'Zeshan Desk is an opensource tool';
+      const message = 'Chatyst Desk is an opensource tool';
       expect(new MessageFormatter(message).formattedMessage).toMatch(message);
     });
 
@@ -138,9 +138,9 @@ After`;
   describe('plain text content', () => {
     it('returns the plain text without HTML', () => {
       const message =
-        '<b>Zeshan Desk is an opensource tool. https://zeshan.local</b>';
+        '<b>Chatyst Desk is an opensource tool. https://chatyst.techyst.net</b>';
       expect(new MessageFormatter(message).plainText).toMatch(
-        'Zeshan Desk is an opensource tool. https://zeshan.local'
+        'Chatyst Desk is an opensource tool. https://chatyst.techyst.net'
       );
     });
   });

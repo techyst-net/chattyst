@@ -123,11 +123,11 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "Puteți primi e-mailuri în domeniul dvs. personalizat acum."
       }
     },
-    "UPDATE_CHATWOOT": "Este disponibilă o actualizare {latestChatwootVersion} pentru Zeshan Desk. Vă rugăm să actualizați instanța.",
+    "UPDATE_CHATWOOT": "Este disponibilă o actualizare {latestChatwootVersion} pentru Chatyst Desk. Vă rugăm să actualizați instanța.",
     "LEARN_MORE": "Află mai mult",
-    "PAYMENT_PENDING": "Plata dvs. este în așteptare. Vă rugăm să actualizați informațiile de plată pentru a continua să utilizați Zeshan Desk",
-    "UPGRADE": "Upgrade to continue using Zeshan Desk",
-    "LIMITS_UPGRADE": "Contul dvs. a depășit limitele de utilizare, vă rugăm să vă actualizați planul pentru a continua să utilizați Zeshan Desk",
+    "PAYMENT_PENDING": "Plata dvs. este în așteptare. Vă rugăm să actualizați informațiile de plată pentru a continua să utilizați Chatyst Desk",
+    "UPGRADE": "Upgrade to continue using Chatyst Desk",
+    "LIMITS_UPGRADE": "Contul dvs. a depășit limitele de utilizare, vă rugăm să vă actualizați planul pentru a continua să utilizați Chatyst Desk",
     "OPEN_BILLING": "Deschide facturarea"
   },
   "FORMS": {

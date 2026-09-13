@@ -123,11 +123,11 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "Du kan motta e-post i ditt egendefinerte domene nå."
       }
     },
-    "UPDATE_CHATWOOT": "En oppdatering av {latestChatwootVersion} for Zeshan Desk er tilgjengelig. Oppdater din instans.",
+    "UPDATE_CHATWOOT": "En oppdatering av {latestChatwootVersion} for Chatyst Desk er tilgjengelig. Oppdater din instans.",
     "LEARN_MORE": "Learn more",
-    "PAYMENT_PENDING": "Your payment is pending. Please update your payment information to continue using Zeshan Desk",
-    "UPGRADE": "Upgrade to continue using Zeshan Desk",
-    "LIMITS_UPGRADE": "Your account has exceeded the usage limits, please upgrade your plan to continue using Zeshan Desk",
+    "PAYMENT_PENDING": "Your payment is pending. Please update your payment information to continue using Chatyst Desk",
+    "UPGRADE": "Upgrade to continue using Chatyst Desk",
+    "LIMITS_UPGRADE": "Your account has exceeded the usage limits, please upgrade your plan to continue using Chatyst Desk",
     "OPEN_BILLING": "Open billing"
   },
   "FORMS": {

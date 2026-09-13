@@ -22,14 +22,14 @@ describe('#getUserString', () => {
         user: {
           name: 'Pranav',
           email: 'pranav@example.com',
-          avatar_url: 'https://zeshan.local',
+          avatar_url: 'https://chatyst.techyst.net',
           identifier_hash: '12345',
         },
         identifier: '12345',
       })
     ).toBe(
       JSON.stringify([
-        ['avatar_url', 'https://zeshan.local'],
+        ['avatar_url', 'https://chatyst.techyst.net'],
         ['email', 'pranav@example.com'],
         ['name', 'Pranav'],
         ['identifier_hash', '12345'],
@@ -41,12 +41,12 @@ describe('#getUserString', () => {
       getUserString({
         user: {
           email: 'pranav@example.com',
-          avatar_url: 'https://zeshan.local',
+          avatar_url: 'https://chatyst.techyst.net',
         },
       })
     ).toBe(
       JSON.stringify([
-        ['avatar_url', 'https://zeshan.local'],
+        ['avatar_url', 'https://chatyst.techyst.net'],
         ['email', 'pranav@example.com'],
         ['name', ''],
         ['identifier_hash', ''],
@@ -130,7 +130,7 @@ describe('#computeHashForUserData', () => {
         user: {
           name: 'Pranav',
           email: 'pranav@example.com',
-          avatar_url: 'https://zeshan.local',
+          avatar_url: 'https://chatyst.techyst.net',
           identifier_hash: '12345',
         },
       },
@@ -227,10 +227,10 @@ describe('#computeHashForUserData', () => {
 
   it.each([
     ['phone_number', '+15555550100', '+15555550101'],
-    ['company_name', 'Zeshan Desk', 'Acme'],
+    ['company_name', 'Chatyst Desk', 'Acme'],
     ['city', 'Bengaluru', 'Kochi'],
     ['country_code', 'IN', 'US'],
-    ['description', 'Zeshan Desk user', 'Acme user'],
+    ['description', 'Chatyst Desk user', 'Acme user'],
   ])('changes when %s changes', (attribute, currentValue, updatedValue) => {
     const currentHash = computeHashForUserData({
       identifier,

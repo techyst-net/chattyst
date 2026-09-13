@@ -85,7 +85,7 @@ const handleDismiss = slug => {
 const handleReadMore = () => {
   const currentPost = unDismissedPosts.value[currentIndex.value];
   if (currentPost?.slug) {
-    window.open(`https://zeshan.local${currentPost.slug}`, '_blank');
+    window.open(`https://chatyst.techyst.net${currentPost.slug}`, '_blank');
   }
 };
 

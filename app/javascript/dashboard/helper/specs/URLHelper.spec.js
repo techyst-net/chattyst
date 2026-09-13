@@ -84,7 +84,7 @@ describe('#URL Helpers', () => {
 
   describe('isValidURL', () => {
     it('should return true if valid url is passed', () => {
-      expect(isValidURL('https://zeshan.local')).toBe(true);
+      expect(isValidURL('https://chatyst.techyst.net')).toBe(true);
     });
     it('should return false if invalid url is passed', () => {
       expect(isValidURL('alert.window')).toBe(false);
@@ -181,7 +181,7 @@ describe('#URL Helpers', () => {
 
   describe('hasValidAvatarUrl', () => {
     test('should return true for valid non-Gravatar URL', () => {
-      expect(hasValidAvatarUrl('https://zeshan.local')).toBe(true);
+      expect(hasValidAvatarUrl('https://chatyst.techyst.net')).toBe(true);
     });
 
     test('should return false for a Gravatar URL (www.gravatar.com)', () => {

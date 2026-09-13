@@ -425,7 +425,7 @@
         "SLUG": {
           "LABEL": "スラッグ",
           "PLACEHOLDER": "URL用のカテゴリーのスラッグ",
-          "HELP_TEXT": "zeshan.local/hc/my-portal/en-US/categories/my-slug",
+          "HELP_TEXT": "chatyst.techyst.net/hc/my-portal/en-US/categories/my-slug",
           "ERROR": "スラッグが必須です"
         },
         "DESCRIPTION": {
@@ -456,7 +456,7 @@
         "SLUG": {
           "LABEL": "スラッグ",
           "PLACEHOLDER": "URL用のカテゴリーのスラッグ",
-          "HELP_TEXT": "zeshan.local/hc/my-portal/en-US/categories/my-slug",
+          "HELP_TEXT": "chatyst.techyst.net/hc/my-portal/en-US/categories/my-slug",
           "ERROR": "スラッグが必須です"
         },
         "DESCRIPTION": {
@@ -693,7 +693,7 @@
             "LABEL": "スラッグ",
             "PLACEHOLDER": "URL用のカテゴリーのスラッグ",
             "ERROR": "スラッグが必須です",
-            "HELP_TEXT": "zeshan.local/hc/{portalSlug}/{localeCode}/categories/{categorySlug}"
+            "HELP_TEXT": "chatyst.techyst.net/hc/{portalSlug}/{localeCode}/categories/{categorySlug}"
           },
           "DESCRIPTION": {
             "LABEL": "説明",
@@ -853,7 +853,7 @@
       "CONFIRM_BUTTON_LABEL": "作成",
       "NAME": {
         "LABEL": "名前",
-        "PLACEHOLDER": "ユーザーガイド | Zeshan Desk",
+        "PLACEHOLDER": "ユーザーガイド | Chatyst Desk",
         "MESSAGE": "ポータルの名前を選択してください。",
         "ERROR": "名前が必須です"
       },
@@ -976,7 +976,7 @@
         "HEADER": "連携",
         "DESCRIPTION": "Connect tools that extend what your help center can do.",
         "LIVE_CHAT": {
-          "TITLE": "Live chat with Zeshan Desk",
+          "TITLE": "Live chat with Chatyst Desk",
           "DESCRIPTION": "Show a live chat widget on your help center so visitors can reach you while they read.",
           "PLACEHOLDER": "ライブチャットウィジェットを選択",
           "NONE_OPTION": "No widget"

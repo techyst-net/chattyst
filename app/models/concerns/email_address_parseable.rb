@@ -10,6 +10,6 @@ module EmailAddressParseable
   end
 
   def default_sender_email_address
-    Mail::Address.new(ENV.fetch('MAILER_SENDER_EMAIL', 'noreply@zeshan.local')).address
+    Mail::Address.new(ENV.fetch('MAILER_SENDER_EMAIL', 'noreply@techyst.local')).address
   end
 end

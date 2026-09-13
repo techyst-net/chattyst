@@ -1,9 +1,9 @@
 {
-  "name": "Zeshan Desk",
-  "description": "Zeshan Desk is a customer support tool for instant messaging channels",
-  "website": "https://zeshan.local",
+  "name": "Chatyst Desk",
+  "description": "Chatyst Desk is a customer support tool for instant messaging channels",
+  "website": "https://chatyst.techyst.net",
   "repository": "https://github.com/chatwoot/chatwoot",
-  "logo": "https://zeshan.local",
+  "logo": "https://chatyst.techyst.net",
   "keywords": [
     "live chat",
     "customer support",
@@ -26,11 +26,11 @@
       "value": "production"
     },
     "FRONTEND_URL": {
-      "description": "Public root URL of the Zeshan Desk installation. This will be used in the emails.",
+      "description": "Public root URL of the Chatyst Desk installation. This will be used in the emails.",
       "value": "https://CHANGE.herokuapp.com"
     },
     "INSTALLATION_ENV": {
-      "description": "Installation method used for Zeshan Desk.",
+      "description": "Installation method used for Chatyst Desk.",
       "value": "heroku"
     },
     "REDIS_OPENSSL_VERIFY_MODE":{

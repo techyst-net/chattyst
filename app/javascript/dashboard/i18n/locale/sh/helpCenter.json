@@ -425,7 +425,7 @@
         "SLUG": {
           "LABEL": "Slug",
           "PLACEHOLDER": "Slug i kategorisë për url-të",
-          "HELP_TEXT": "zeshan.local/hc/my-portal/en-US/categories/my-slug",
+          "HELP_TEXT": "chatyst.techyst.net/hc/my-portal/en-US/categories/my-slug",
           "ERROR": "Slug është i nevojshëm"
         },
         "DESCRIPTION": {
@@ -456,7 +456,7 @@
         "SLUG": {
           "LABEL": "Slug",
           "PLACEHOLDER": "Slug kategorije za URL",
-          "HELP_TEXT": "zeshan.local/hc/my-portal/en-US/categories/my-slug",
+          "HELP_TEXT": "chatyst.techyst.net/hc/my-portal/en-US/categories/my-slug",
           "ERROR": "Slug je obavezan"
         },
         "DESCRIPTION": {
@@ -693,7 +693,7 @@
             "LABEL": "Slug",
             "PLACEHOLDER": "Slug kategorije za URL-ove",
             "ERROR": "Slug je obavezan",
-            "HELP_TEXT": "zeshan.local/hc/{portalSlug}/{localeCode}/categories/{categorySlug}"
+            "HELP_TEXT": "chatyst.techyst.net/hc/{portalSlug}/{localeCode}/categories/{categorySlug}"
           },
           "DESCRIPTION": {
             "LABEL": "Opis",
@@ -853,7 +853,7 @@
       "CONFIRM_BUTTON_LABEL": "Kreiraj",
       "NAME": {
         "LABEL": "Ime",
-        "PLACEHOLDER": "User Guide | Zeshan Desk",
+        "PLACEHOLDER": "User Guide | Chatyst Desk",
         "MESSAGE": "Izaberite ime za svoj portal.",
         "ERROR": "Ime je obavezno"
       },
@@ -976,7 +976,7 @@
         "HEADER": "Integracije",
         "DESCRIPTION": "Connect tools that extend what your help center can do.",
         "LIVE_CHAT": {
-          "TITLE": "Live chat with Zeshan Desk",
+          "TITLE": "Live chat with Chatyst Desk",
           "DESCRIPTION": "Show a live chat widget on your help center so visitors can reach you while they read.",
           "PLACEHOLDER": "Select live chat widget",
           "NONE_OPTION": "No widget"

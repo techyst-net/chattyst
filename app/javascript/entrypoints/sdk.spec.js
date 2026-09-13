@@ -17,7 +17,7 @@ describe('$chatwoot.setUser', () => {
     vi.spyOn(Cookies, 'set').mockImplementation(() => {});
 
     window.chatwootSDK.run({
-      baseUrl: 'https://zeshan.local',
+      baseUrl: 'https://chatyst.techyst.net',
       websiteToken: 'website-token',
     });
   });

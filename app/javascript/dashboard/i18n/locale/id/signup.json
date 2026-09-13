@@ -1,11 +1,11 @@
 {
   "REGISTER": {
     "TRY_WOOT": "Buat akun",
-    "GET_STARTED": "Get started with Zeshan Desk",
+    "GET_STARTED": "Get started with Chatyst Desk",
     "TITLE": "Daftar",
     "TESTIMONIAL_HEADER": "Hanya butuh satu langkah untuk maju",
     "TESTIMONIAL_CONTENT": "Anda hanya tinggal selangkah lagi untuk berinteraksi dengan pelanggan Anda, mempertahankan mereka, dan menemukan yang baru.",
-    "TERMS_ACCEPT": "Dengan membuat akun, Anda menyetujui <a href=\"https://zeshan.local\">Syarat & Ketentuan</a> dan <a href=\"https://zeshan.local\">Kebijakan Privasi</a> kami.",
+    "TERMS_ACCEPT": "Dengan membuat akun, Anda menyetujui <a href=\"https://chatyst.techyst.net\">Syarat & Ketentuan</a> dan <a href=\"https://chatyst.techyst.net\">Kebijakan Privasi</a> kami.",
     "OAUTH": {
       "GOOGLE_SIGNUP": "Daftar dengan Google"
     },

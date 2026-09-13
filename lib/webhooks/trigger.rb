@@ -53,11 +53,11 @@ class Webhooks::Trigger
 
   def request_headers(body)
     headers = { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
-    headers['X-Zeshan Desk-Delivery'] = @delivery_id if @delivery_id.present?
+    headers['X-Chatyst Desk-Delivery'] = @delivery_id if @delivery_id.present?
     if @secret.present?
       ts = Time.now.to_i.to_s
-      headers['X-Zeshan Desk-Timestamp'] = ts
-      headers['X-Zeshan Desk-Signature'] = "sha256=#{OpenSSL::HMAC.hexdigest('SHA256', @secret, "#{ts}.#{body}")}"
+      headers['X-Chatyst Desk-Timestamp'] = ts
+      headers['X-Chatyst Desk-Signature'] = "sha256=#{OpenSSL::HMAC.hexdigest('SHA256', @secret, "#{ts}.#{body}")}"
     end
     headers
   end

@@ -6,13 +6,13 @@ describe('#mutations', () => {
     it('set agent records', () => {
       const state = { records: [] };
       mutations[types.default.SET_AGENTS](state, [
-        { id: 1, name: 'Agent1', email: 'noreply@zeshan.local' },
+        { id: 1, name: 'Agent1', email: 'noreply@techyst.local' },
       ]);
       expect(state.records).toEqual([
         {
           id: 1,
           name: 'Agent1',
-          email: 'noreply@zeshan.local',
+          email: 'noreply@techyst.local',
         },
       ]);
     });
@@ -21,16 +21,16 @@ describe('#mutations', () => {
   describe('#ADD_AGENT', () => {
     it('push newly created agent data to the store', () => {
       const state = {
-        records: [{ id: 1, name: 'Agent1', email: 'noreply@zeshan.local' }],
+        records: [{ id: 1, name: 'Agent1', email: 'noreply@techyst.local' }],
       };
       mutations[types.default.ADD_AGENT](state, {
         id: 2,
         name: 'Agent2',
-        email: 'noreply@zeshan.local',
+        email: 'noreply@techyst.local',
       });
       expect(state.records).toEqual([
-        { id: 1, name: 'Agent1', email: 'noreply@zeshan.local' },
-        { id: 2, name: 'Agent2', email: 'noreply@zeshan.local' },
+        { id: 1, name: 'Agent1', email: 'noreply@techyst.local' },
+        { id: 2, name: 'Agent2', email: 'noreply@techyst.local' },
       ]);
     });
   });
@@ -38,15 +38,15 @@ describe('#mutations', () => {
   describe('#EDIT_AGENT', () => {
     it('update agent record', () => {
       const state = {
-        records: [{ id: 1, name: 'Agent1', email: 'noreply@zeshan.local' }],
+        records: [{ id: 1, name: 'Agent1', email: 'noreply@techyst.local' }],
       };
       mutations[types.default.EDIT_AGENT](state, {
         id: 1,
         name: 'Agent2',
-        email: 'noreply@zeshan.local',
+        email: 'noreply@techyst.local',
       });
       expect(state.records).toEqual([
-        { id: 1, name: 'Agent2', email: 'noreply@zeshan.local' },
+        { id: 1, name: 'Agent2', email: 'noreply@techyst.local' },
       ]);
     });
   });
@@ -54,7 +54,7 @@ describe('#mutations', () => {
   describe('#DELETE_AGENT', () => {
     it('delete agent record', () => {
       const state = {
-        records: [{ id: 1, name: 'Agent1', email: 'noreply@zeshan.local' }],
+        records: [{ id: 1, name: 'Agent1', email: 'noreply@techyst.local' }],
       };
       mutations[types.default.DELETE_AGENT](state, 1);
       expect(state.records).toEqual([]);
@@ -68,13 +68,13 @@ describe('#mutations', () => {
           {
             id: 1,
             name: 'Agent1',
-            email: 'noreply@zeshan.local',
+            email: 'noreply@techyst.local',
             availability_status: 'offline',
           },
           {
             id: 2,
             name: 'Agent1',
-            email: 'noreply@zeshan.local',
+            email: 'noreply@techyst.local',
             availability_status: 'online',
           },
         ],
@@ -85,13 +85,13 @@ describe('#mutations', () => {
         {
           id: 1,
           name: 'Agent1',
-          email: 'noreply@zeshan.local',
+          email: 'noreply@techyst.local',
           availability_status: 'busy',
         },
         {
           id: 2,
           name: 'Agent1',
-          email: 'noreply@zeshan.local',
+          email: 'noreply@techyst.local',
           availability_status: 'offline',
         },
       ]);
@@ -105,13 +105,13 @@ describe('#mutations', () => {
           {
             id: 1,
             name: 'Agent1',
-            email: 'noreply@zeshan.local',
+            email: 'noreply@techyst.local',
             availability_status: 'offline',
           },
           {
             id: 2,
             name: 'Agent1',
-            email: 'noreply@zeshan.local',
+            email: 'noreply@techyst.local',
             availability_status: 'online',
           },
         ],
@@ -125,13 +125,13 @@ describe('#mutations', () => {
         {
           id: 1,
           name: 'Agent1',
-          email: 'noreply@zeshan.local',
+          email: 'noreply@techyst.local',
           availability_status: 'busy',
         },
         {
           id: 2,
           name: 'Agent1',
-          email: 'noreply@zeshan.local',
+          email: 'noreply@techyst.local',
           availability_status: 'online',
         },
       ]);

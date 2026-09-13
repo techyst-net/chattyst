@@ -425,7 +425,7 @@
         "SLUG": {
           "LABEL": "سلاگ",
           "PLACEHOLDER": "یو آر ایل کے لیے زمرہ کا سلاگ",
-          "HELP_TEXT": "zeshan.local/hc/my-portal/en-US/categories/my-slug",
+          "HELP_TEXT": "chatyst.techyst.net/hc/my-portal/en-US/categories/my-slug",
           "ERROR": "سلاگ ضروری ہے"
         },
         "DESCRIPTION": {
@@ -456,7 +456,7 @@
         "SLUG": {
           "LABEL": "سلاگ",
           "PLACEHOLDER": "یو آر ایل کے لیے زمرے کا سلاگ",
-          "HELP_TEXT": "zeshan.local/hc/my-portal/en-US/categories/my-slug",
+          "HELP_TEXT": "chatyst.techyst.net/hc/my-portal/en-US/categories/my-slug",
           "ERROR": "سلاگ ضروری ہے"
         },
         "DESCRIPTION": {
@@ -693,7 +693,7 @@
             "LABEL": "سلاگ",
             "PLACEHOLDER": "یو آر ایل کے لیے زمرہ کا سلاگ",
             "ERROR": "سلاگ ضروری ہے",
-            "HELP_TEXT": "zeshan.local/hc/{portalSlug}/{localeCode}/categories/{categorySlug}"
+            "HELP_TEXT": "chatyst.techyst.net/hc/{portalSlug}/{localeCode}/categories/{categorySlug}"
           },
           "DESCRIPTION": {
             "LABEL": "تفصیل",
@@ -853,7 +853,7 @@
       "CONFIRM_BUTTON_LABEL": "بنائیں",
       "NAME": {
         "LABEL": "نام",
-        "PLACEHOLDER": "صارف گائیڈ | Zeshan Desk",
+        "PLACEHOLDER": "صارف گائیڈ | Chatyst Desk",
         "MESSAGE": "اپنے پورٹل کے لیے ایک نام منتخب کریں۔.",
         "ERROR": "نام ضروری ہے"
       },
@@ -976,7 +976,7 @@
         "HEADER": "انضمام",
         "DESCRIPTION": "Connect tools that extend what your help center can do.",
         "LIVE_CHAT": {
-          "TITLE": "Live chat with Zeshan Desk",
+          "TITLE": "Live chat with Chatyst Desk",
           "DESCRIPTION": "Show a live chat widget on your help center so visitors can reach you while they read.",
           "PLACEHOLDER": "لائیو چیٹ ویجیٹ منتخب کریں",
           "NONE_OPTION": "کوئی ویجیٹ نہیں"

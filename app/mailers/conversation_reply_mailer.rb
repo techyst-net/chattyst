@@ -6,7 +6,7 @@ class ConversationReplyMailer < ApplicationMailer
   include ConversationReplyMailerHelper
   include ReferencesHeaderBuilder
   include EmailAddressParseable
-  default from: ENV.fetch('MAILER_SENDER_EMAIL', 'Zeshan Desk <noreply@zeshan.local>')
+  default from: ENV.fetch('MAILER_SENDER_EMAIL', 'Chatyst Desk <noreply@techyst.local>')
   layout :choose_layout
 
   def reply_with_summary(conversation, last_queued_id)

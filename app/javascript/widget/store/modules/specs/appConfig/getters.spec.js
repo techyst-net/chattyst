@@ -9,8 +9,8 @@ describe('#getters', () => {
   });
   describe('#getReferrerHost', () => {
     it('returns correct value', () => {
-      const state = { referrerHost: 'zeshan.local' };
-      expect(getters.getReferrerHost(state)).toEqual('zeshan.local');
+      const state = { referrerHost: 'chatyst.techyst.net' };
+      expect(getters.getReferrerHost(state)).toEqual('chatyst.techyst.net');
     });
   });
   describe('#getShowUnreadMessagesDialog', () => {

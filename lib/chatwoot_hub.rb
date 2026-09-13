@@ -1,6 +1,6 @@
 # TODO: lets use HTTParty instead of RestClient
 class ChatwootHub
-  DEFAULT_BASE_URL = 'https://zeshan.local'.freeze
+  DEFAULT_BASE_URL = 'https://chatyst.techyst.net'.freeze
 
   def self.base_url
     DEFAULT_BASE_URL
@@ -59,7 +59,7 @@ class ChatwootHub
   def self.instance_config
     {
       installation_identifier: installation_identifier,
-      installation_version: Zeshan Desk.config[:version],
+      installation_version: Chatyst Desk.config[:version],
       installation_host: URI.parse(ENV.fetch('FRONTEND_URL', '')).host,
       installation_env: ENV.fetch('INSTALLATION_ENV', ''),
       edition: ENV.fetch('CW_EDITION', '')

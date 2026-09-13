@@ -123,11 +123,11 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "Teraz môžete prijímať e-maily vo vlastnej doméne."
       }
     },
-    "UPDATE_CHATWOOT": "K dispozícii je aktualizácia {latestChatwootVersion} pre Zeshan Desk. Prosím, aktualizujte svoju inštanciu.",
+    "UPDATE_CHATWOOT": "K dispozícii je aktualizácia {latestChatwootVersion} pre Chatyst Desk. Prosím, aktualizujte svoju inštanciu.",
     "LEARN_MORE": "Learn more",
-    "PAYMENT_PENDING": "Your payment is pending. Please update your payment information to continue using Zeshan Desk",
-    "UPGRADE": "Upgrade to continue using Zeshan Desk",
-    "LIMITS_UPGRADE": "Your account has exceeded the usage limits, please upgrade your plan to continue using Zeshan Desk",
+    "PAYMENT_PENDING": "Your payment is pending. Please update your payment information to continue using Chatyst Desk",
+    "UPGRADE": "Upgrade to continue using Chatyst Desk",
+    "LIMITS_UPGRADE": "Your account has exceeded the usage limits, please upgrade your plan to continue using Chatyst Desk",
     "OPEN_BILLING": "Open billing"
   },
   "FORMS": {

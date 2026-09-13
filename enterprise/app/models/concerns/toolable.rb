@@ -77,25 +77,25 @@ module Concerns::Toolable
   end
 
   def add_base_headers(headers, state)
-    headers['X-Zeshan Desk-Account-Id'] = state[:account_id].to_s if state[:account_id]
-    headers['X-Zeshan Desk-Assistant-Id'] = state[:assistant_id].to_s if state[:assistant_id]
-    headers['X-Zeshan Desk-Tool-Slug'] = slug if slug.present?
+    headers['X-Chatyst Desk-Account-Id'] = state[:account_id].to_s if state[:account_id]
+    headers['X-Chatyst Desk-Assistant-Id'] = state[:assistant_id].to_s if state[:assistant_id]
+    headers['X-Chatyst Desk-Tool-Slug'] = slug if slug.present?
   end
 
   def add_conversation_headers(headers, conversation)
-    headers['X-Zeshan Desk-Conversation-Id'] = conversation[:id].to_s if conversation[:id]
-    headers['X-Zeshan Desk-Conversation-Display-Id'] = conversation[:display_id].to_s if conversation[:display_id]
+    headers['X-Chatyst Desk-Conversation-Id'] = conversation[:id].to_s if conversation[:id]
+    headers['X-Chatyst Desk-Conversation-Display-Id'] = conversation[:display_id].to_s if conversation[:display_id]
   end
 
   def add_contact_headers(headers, contact)
-    headers['X-Zeshan Desk-Contact-Id'] = contact[:id].to_s if contact[:id]
-    headers['X-Zeshan Desk-Contact-Email'] = contact[:email].to_s if contact[:email].present?
-    headers['X-Zeshan Desk-Contact-Phone'] = contact[:phone_number].to_s if contact[:phone_number].present?
+    headers['X-Chatyst Desk-Contact-Id'] = contact[:id].to_s if contact[:id]
+    headers['X-Chatyst Desk-Contact-Email'] = contact[:email].to_s if contact[:email].present?
+    headers['X-Chatyst Desk-Contact-Phone'] = contact[:phone_number].to_s if contact[:phone_number].present?
   end
 
   def add_contact_inbox_headers(headers, contact_inbox)
-    headers['X-Zeshan Desk-Contact-Inbox-Id'] = contact_inbox[:id].to_s if contact_inbox&.[](:id)
-    headers['X-Zeshan Desk-Contact-Inbox-Verified'] = (contact_inbox&.[](:hmac_verified) || false).to_s
+    headers['X-Chatyst Desk-Contact-Inbox-Id'] = contact_inbox[:id].to_s if contact_inbox&.[](:id)
+    headers['X-Chatyst Desk-Contact-Inbox-Verified'] = (contact_inbox&.[](:hmac_verified) || false).to_s
   end
 
   def format_response(raw_response_body)

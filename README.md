@@ -1,4 +1,4 @@
-# Zeshan Desk
+# Chatyst Desk
 
 Customer support and engagement: shared inboxes across live chat, email, social
 and messaging channels, contacts, help centre, canned responses, automations,
@@ -46,8 +46,8 @@ Super Admin → Settings.
 
 | Key | Set to |
 |---|---|
-| `INSTALLATION_NAME` | `Zeshan Desk` — used in the dashboard, page titles and, via the `useBranding` composable, substituted into any remaining upstream product text |
-| `BRAND_NAME` | `Zeshan Desk` — used in emails and the widget |
+| `INSTALLATION_NAME` | `Chatyst Desk` — used in the dashboard, page titles and, via the `useBranding` composable, substituted into any remaining upstream product text |
+| `BRAND_NAME` | `Chatyst Desk` — used in emails and the widget |
 | `LOGO`, `LOGO_DARK`, `LOGO_THUMBNAIL` | replaced in `public/brand-assets/` |
 | `BRAND_URL`, `WIDGET_BRAND_URL` | the "Powered By" target in emails and the widget |
 | `TERMS_URL`, `PRIVACY_URL` | **point these at documents you publish** — the sign-up page asks users to accept them |

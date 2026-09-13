@@ -920,7 +920,7 @@ describe('stripUnsupportedFormatting', () => {
     });
 
     it('preserves email autolinks', () => {
-      const content = 'Contact us at <noreply@zeshan.local>';
+      const content = 'Contact us at <noreply@techyst.local>';
       expect(stripUnsupportedFormatting(content, fullSchema)).toBe(content);
     });
 
@@ -958,10 +958,10 @@ describe('stripUnsupportedFormatting', () => {
       // Underscores in URLs should not be stripped as italic formatting
       expect(
         stripUnsupportedFormatting(
-          'https://zeshan.local',
+          'https://chatyst.techyst.net',
           emptySchema
         )
-      ).toBe('https://zeshan.local');
+      ).toBe('https://chatyst.techyst.net');
 
       // Underscores in variable names should not be stripped
       expect(
@@ -1080,8 +1080,8 @@ describe('stripUnsupportedFormatting', () => {
     });
 
     it('converts email autolinks to plain text', () => {
-      const content = 'Reach us at <noreply@zeshan.local> for help';
-      const expected = 'Reach us at noreply@zeshan.local for help';
+      const content = 'Reach us at <noreply@techyst.local> for help';
+      const expected = 'Reach us at noreply@techyst.local for help';
       expect(stripUnsupportedFormatting(content, emptySchema)).toBe(expected);
     });
 

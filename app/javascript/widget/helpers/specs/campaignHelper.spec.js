@@ -13,29 +13,29 @@ describe('#Campaigns Helper', () => {
     it('returns correct value if a valid URL is passed', () => {
       expect(
         isPatternMatchingWithURL(
-          'https://zeshan.local*',
-          'https://zeshan.local'
+          'https://chatyst.techyst.net*',
+          'https://chatyst.techyst.net'
         )
       ).toBe(true);
 
       expect(
         isPatternMatchingWithURL(
-          'https://*.zeshan.local/pricing/',
-          'https://zeshan.local'
+          'https://*.chatyst.techyst.net/pricing/',
+          'https://chatyst.techyst.net'
         )
       ).toBe(true);
 
       expect(
         isPatternMatchingWithURL(
-          'https://{*.}?zeshan.local/pricing?test=true',
-          'https://zeshan.local'
+          'https://{*.}?chatyst.techyst.net/pricing?test=true',
+          'https://chatyst.techyst.net'
         )
       ).toBe(true);
 
       expect(
         isPatternMatchingWithURL(
-          'https://{*.}?zeshan.local/pricing*\\?*',
-          'https://zeshan.local'
+          'https://{*.}?chatyst.techyst.net/pricing*\\?*',
+          'https://chatyst.techyst.net'
         )
       ).toBe(true);
     });
@@ -48,13 +48,13 @@ describe('#Campaigns Helper', () => {
           id: 1,
           timeOnPage: 3,
           triggerOnlyDuringBusinessHours: false,
-          url: 'https://zeshan.local',
+          url: 'https://chatyst.techyst.net',
         },
         {
           id: 2,
           triggerOnlyDuringBusinessHours: false,
           timeOnPage: 6,
-          url: 'https://zeshan.local',
+          url: 'https://chatyst.techyst.net',
         },
       ]);
     });
@@ -67,23 +67,23 @@ describe('#Campaigns Helper', () => {
             {
               id: 1,
               timeOnPage: 3,
-              url: 'https://zeshan.local',
+              url: 'https://chatyst.techyst.net',
               triggerOnlyDuringBusinessHours: false,
             },
             {
               id: 2,
               timeOnPage: 6,
-              url: 'https://zeshan.local',
+              url: 'https://chatyst.techyst.net',
               triggerOnlyDuringBusinessHours: false,
             },
           ],
-          currentURL: 'https://zeshan.local',
+          currentURL: 'https://chatyst.techyst.net',
         })
       ).toStrictEqual([
         {
           id: 2,
           timeOnPage: 6,
-          url: 'https://zeshan.local',
+          url: 'https://chatyst.techyst.net',
           triggerOnlyDuringBusinessHours: false,
         },
       ]);
@@ -95,24 +95,24 @@ describe('#Campaigns Helper', () => {
             {
               id: 1,
               timeOnPage: 3,
-              url: 'https://zeshan.local',
+              url: 'https://chatyst.techyst.net',
               triggerOnlyDuringBusinessHours: false,
             },
             {
               id: 2,
               timeOnPage: 6,
-              url: 'https://zeshan.local',
+              url: 'https://chatyst.techyst.net',
               triggerOnlyDuringBusinessHours: true,
             },
           ],
-          currentURL: 'https://zeshan.local',
+          currentURL: 'https://chatyst.techyst.net',
           isInBusinessHours: true,
         })
       ).toStrictEqual([
         {
           id: 2,
           timeOnPage: 6,
-          url: 'https://zeshan.local',
+          url: 'https://chatyst.techyst.net',
           triggerOnlyDuringBusinessHours: true,
         },
       ]);
@@ -124,17 +124,17 @@ describe('#Campaigns Helper', () => {
             {
               id: 1,
               timeOnPage: 3,
-              url: 'https://zeshan.local',
+              url: 'https://chatyst.techyst.net',
               triggerOnlyDuringBusinessHours: true,
             },
             {
               id: 2,
               timeOnPage: 6,
-              url: 'https://zeshan.local',
+              url: 'https://chatyst.techyst.net',
               triggerOnlyDuringBusinessHours: true,
             },
           ],
-          currentURL: 'https://zeshan.local',
+          currentURL: 'https://chatyst.techyst.net',
           isInBusinessHours: false,
         })
       ).toStrictEqual([]);

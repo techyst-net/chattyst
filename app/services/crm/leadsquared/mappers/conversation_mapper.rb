@@ -103,6 +103,6 @@ class Crm::Leadsquared::Mappers::ConversationMapper
   end
 
   def brand_name
-    ::GlobalConfig.get('BRAND_NAME')['BRAND_NAME'] || 'Zeshan Desk'
+    ::GlobalConfig.get('BRAND_NAME')['BRAND_NAME'] || 'Chatyst Desk'
   end
 end

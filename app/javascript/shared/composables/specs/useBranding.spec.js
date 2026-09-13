@@ -24,17 +24,17 @@ describe('useBranding', () => {
   });
 
   describe('replaceInstallationName', () => {
-    it('should replace "Zeshan Desk" with installation name when both text and installation name are provided', () => {
+    it('should replace "Chatyst Desk" with installation name when both text and installation name are provided', () => {
       const { replaceInstallationName } = useBranding();
-      const result = replaceInstallationName('Welcome to Zeshan Desk');
+      const result = replaceInstallationName('Welcome to Chatyst Desk');
 
       expect(result).toBe('Welcome to MyCompany');
     });
 
-    it('should replace multiple occurrences of "Zeshan Desk"', () => {
+    it('should replace multiple occurrences of "Chatyst Desk"', () => {
       const { replaceInstallationName } = useBranding();
       const result = replaceInstallationName(
-        'Zeshan Desk is great! Use Zeshan Desk today.'
+        'Chatyst Desk is great! Use Chatyst Desk today.'
       );
 
       expect(result).toBe('MyCompany is great! Use MyCompany today.');
@@ -44,18 +44,18 @@ describe('useBranding', () => {
       mockGlobalConfig.value = {};
 
       const { replaceInstallationName } = useBranding();
-      const result = replaceInstallationName('Welcome to Zeshan Desk');
+      const result = replaceInstallationName('Welcome to Chatyst Desk');
 
-      expect(result).toBe('Welcome to Zeshan Desk');
+      expect(result).toBe('Welcome to Chatyst Desk');
     });
 
     it('should return original text when globalConfig is not available', () => {
       mockGlobalConfig.value = undefined;
 
       const { replaceInstallationName } = useBranding();
-      const result = replaceInstallationName('Welcome to Zeshan Desk');
+      const result = replaceInstallationName('Welcome to Chatyst Desk');
 
-      expect(result).toBe('Welcome to Zeshan Desk');
+      expect(result).toBe('Welcome to Chatyst Desk');
     });
 
     it('should return original text when text is empty or null', () => {
@@ -66,17 +66,17 @@ describe('useBranding', () => {
       expect(replaceInstallationName(undefined)).toBe(undefined);
     });
 
-    it('should handle text without "Zeshan Desk" gracefully', () => {
+    it('should handle text without "Chatyst Desk" gracefully', () => {
       const { replaceInstallationName } = useBranding();
       const result = replaceInstallationName('Welcome to our platform');
 
       expect(result).toBe('Welcome to our platform');
     });
 
-    it('should replace "Zeshan Desk" regardless of casing', () => {
+    it('should replace "Chatyst Desk" regardless of casing', () => {
       const { replaceInstallationName } = useBranding();
       const result = replaceInstallationName(
-        'Welcome to chatwoot, Zeshan Desk and CHATWOOT'
+        'Welcome to chatwoot, Chatyst Desk and CHATWOOT'
       );
 
       expect(result).toBe('Welcome to MyCompany, MyCompany and MyCompany');
@@ -88,7 +88,7 @@ describe('useBranding', () => {
       };
 
       const { replaceInstallationName } = useBranding();
-      const result = replaceInstallationName('Welcome to Zeshan Desk');
+      const result = replaceInstallationName('Welcome to Chatyst Desk');
 
       expect(result).toBe('Welcome to My-Company & Co.');
     });

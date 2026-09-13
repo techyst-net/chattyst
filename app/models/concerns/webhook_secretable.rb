@@ -3,7 +3,7 @@ module WebhookSecretable
 
   included do
     has_secure_token :secret
-    encrypts :secret if Zeshan Desk.encryption_configured?
+    encrypts :secret if Chatyst Desk.encryption_configured?
   end
 
   def reset_secret!

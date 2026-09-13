@@ -1,6 +1,6 @@
 {
   "LOGIN": {
-    "TITLE": "Login to Zeshan Desk",
+    "TITLE": "Login to Chatyst Desk",
     "EMAIL": {
       "LABEL": "El. paštas",
       "PLACEHOLDER": "example{'@'}companyname.com",

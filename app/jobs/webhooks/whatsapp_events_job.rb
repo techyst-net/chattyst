@@ -36,7 +36,7 @@ class Webhooks::WhatsappEventsJob < MutexApplicationJob
 
   # Detects if the webhook is an SMB message echo event (message sent from WhatsApp Business app)
   # This is part of WhatsApp coexistence feature where businesses can respond from both
-  # Zeshan Desk and the WhatsApp Business app, with messages synced to Zeshan Desk.
+  # Chatyst Desk and the WhatsApp Business app, with messages synced to Chatyst Desk.
   #
   # Regular message payload (field: "messages"):
   # {

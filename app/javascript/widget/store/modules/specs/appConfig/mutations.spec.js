@@ -4,8 +4,8 @@ describe('#mutations', () => {
   describe('#SET_REFERRER_HOST', () => {
     it('sets referrer host properly', () => {
       const state = { referrerHost: '' };
-      mutations.SET_REFERRER_HOST(state, 'zeshan.local');
-      expect(state.referrerHost).toEqual('zeshan.local');
+      mutations.SET_REFERRER_HOST(state, 'chatyst.techyst.net');
+      expect(state.referrerHost).toEqual('chatyst.techyst.net');
     });
   });
 

@@ -55,18 +55,18 @@ class UserSessionTrackingService
   end
 
   def mobile_client_headers
-    name = @request.headers['X-Zeshan Desk-Client-Name']
+    name = @request.headers['X-Chatyst Desk-Client-Name']
     return nil if name.blank?
 
-    platform = @request.headers['X-Zeshan Desk-Platform']
-    model = @request.headers['X-Zeshan Desk-Device-Model']
+    platform = @request.headers['X-Chatyst Desk-Platform']
+    model = @request.headers['X-Chatyst Desk-Device-Model']
 
     {
       browser_name: name,
-      browser_version: @request.headers['X-Zeshan Desk-Client-Version'],
+      browser_version: @request.headers['X-Chatyst Desk-Client-Version'],
       device_name: device_name_for_icon(platform, model),
       platform_name: model,
-      platform_version: @request.headers['X-Zeshan Desk-Platform-Version']
+      platform_version: @request.headers['X-Chatyst Desk-Platform-Version']
     }
   end
 
@@ -85,7 +85,7 @@ class UserSessionTrackingService
     return attrs unless hit
 
     attrs.merge(
-      browser_name: 'Zeshan Desk Mobile',
+      browser_name: 'Chatyst Desk Mobile',
       browser_version: nil,
       platform_name: hit[:platform],
       platform_version: nil,

@@ -66,7 +66,7 @@ class SuperAdmin::AppConfigsController < SuperAdmin::ApplicationController
     message = "#{@config.titleize} settings updated successfully"
     return message unless restart_required_config_saved?
 
-    "#{message.delete_suffix('.')}. Restart Zeshan Desk web and worker processes to apply this change everywhere."
+    "#{message.delete_suffix('.')}. Restart Chatyst Desk web and worker processes to apply this change everywhere."
   end
 
   def success_flash

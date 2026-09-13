@@ -1,6 +1,6 @@
-# This file contains all the installation wide configuration which controls various settings in Zeshan Desk
+# This file contains all the installation wide configuration which controls various settings in Chatyst Desk
 # This is internal config and should not be modified by the user directly in database
-# Zeshan Desk might override and modify these values during the upgrade process
+# Chatyst Desk might override and modify these values during the upgrade process
 # Configs which can be modified by the user are available in the dashboard under appropriate UI
 #
 # name: the name of the config referenced in the code
@@ -15,7 +15,7 @@
 
 # ------- Branding Related Config ------- #
 - name: INSTALLATION_NAME
-  value: 'Zeshan Desk'
+  value: 'Chatyst Desk'
   display_title: 'Installation Name'
   description: 'The installation wide name that would be used in the dashboard, title etc.'
 - name: LOGO_THUMBNAIL
@@ -31,23 +31,23 @@
   display_title: 'Logo Dark Mode'
   description: 'The logo that would be used on the dashboard, login page etc. for dark mode'
 - name: BRAND_URL
-  value: 'https://zeshan.local'
+  value: 'https://chatyst.techyst.net'
   display_title: 'Brand URL'
   description: 'The URL that would be used in emails under the section “Powered By”'
 - name: WIDGET_BRAND_URL
-  value: 'https://zeshan.local'
+  value: 'https://chatyst.techyst.net'
   display_title: 'Widget Brand URL'
   description: 'The URL that would be used in the widget under the section “Powered By”'
 - name: BRAND_NAME
-  value: 'Zeshan Desk'
+  value: 'Chatyst Desk'
   display_title: 'Brand Name'
   description: 'The name that would be used in emails and the widget'
 - name: TERMS_URL
-  value: 'https://zeshan.local/terms'
+  value: 'https://chatyst.techyst.net/terms'
   display_title: 'Terms URL'
   description: 'The terms of service URL displayed in Signup Page'
 - name: PRIVACY_URL
-  value: 'https://zeshan.local/privacy'
+  value: 'https://chatyst.techyst.net/privacy'
   display_title: 'Privacy URL'
   description: 'The privacy policy URL displayed in the app'
 - name: DISPLAY_MANIFEST
@@ -82,7 +82,7 @@
 - name: WEBHOOK_TIMEOUT
   value: 5
   display_title: 'Webhook request timeout (seconds)'
-  description: 'Maximum time Zeshan Desk waits for a webhook response before failing the request'
+  description: 'Maximum time Chatyst Desk waits for a webhook response before failing the request'
   locked: false
 - name: DIRECT_UPLOADS_ENABLED
   type: boolean
@@ -242,29 +242,29 @@
   type: secret
 # ------- End of Context.dev Config ------- #
 
-# ------- Zeshan Desk Internal Config for Cloud ----#
+# ------- Chatyst Desk Internal Config for Cloud ----#
 - name: DISABLE_META_INBOX_CREATION
   value: true
   display_title: 'Disable Meta Inbox Creation'
-  description: 'Disable Facebook, Instagram, and WhatsApp Embedded Signup inbox creation on Zeshan Desk Cloud during Meta incidents'
+  description: 'Disable Facebook, Instagram, and WhatsApp Embedded Signup inbox creation on Chatyst Desk Cloud during Meta incidents'
   locked: false
   type: boolean
 - name: DISABLE_META_MESSAGE_SENDING
   value: true
   display_title: 'Disable Meta Message Sending'
-  description: 'Disable Instagram message sending on Zeshan Desk Cloud during Meta incidents'
+  description: 'Disable Instagram message sending on Chatyst Desk Cloud during Meta incidents'
   locked: false
   type: boolean
 - name: CHATWOOT_INBOX_TOKEN
   value:
   display_title: 'Inbox Token'
-  description: 'The Zeshan Desk Inbox Token for Contact Support in Cloud'
+  description: 'The Chatyst Desk Inbox Token for Contact Support in Cloud'
   locked: false
   type: secret
 - name: CHATWOOT_INBOX_HMAC_KEY
   value:
   display_title: 'Inbox HMAC Key'
-  description: 'The Zeshan Desk Inbox HMAC Key for Contact Support in Cloud'
+  description: 'The Chatyst Desk Inbox HMAC Key for Contact Support in Cloud'
   locked: false
   type: secret
 - name: CHATWOOT_CLOUD_PLANS
@@ -285,7 +285,7 @@
 - name: MARKETING_CONVERSION_TRACKING_CONFIG
   value:
   display_title: 'Marketing Conversion Tracking Config'
-  description: 'JSON config for Zeshan Desk Cloud signup and plan activation conversion tracking'
+  description: 'JSON config for Chatyst Desk Cloud signup and plan activation conversion tracking'
   locked: true
   type: code
 - name: CHATWOOT_CLOUD_PLAN_FEATURES
@@ -294,11 +294,11 @@
   description: 'Config to features and their associated plans'
 - name: DEPLOYMENT_ENV
   value: self-hosted
-  description: 'The deployment environment of the installation, to differentiate between Zeshan Desk cloud and self-hosted'
+  description: 'The deployment environment of the installation, to differentiate between Chatyst Desk cloud and self-hosted'
 - name: CLOUD_ANALYTICS_TOKEN
   value:
   display_title: 'Analytics Token'
-  description: 'The Amplitude analytics API key for Zeshan Desk cloud'
+  description: 'The Amplitude analytics API key for Chatyst Desk cloud'
   type: secret
 - name: CLEARBIT_API_KEY
   value:
@@ -324,9 +324,9 @@
   display_title: 'Inactive WhatsApp Numbers'
   description: 'Comma-separated list of WhatsApp numbers that should be rejected with a 422 error'
   type: code
-# ------- End of Zeshan Desk Internal Config for Cloud ----#
+# ------- End of Chatyst Desk Internal Config for Cloud ----#
 
-# ------- Zeshan Desk Internal Config for Self Hosted ----#
+# ------- Chatyst Desk Internal Config for Self Hosted ----#
 - name: INSTALLATION_PRICING_PLAN
   value: 'community'
   description: 'The pricing plan for the installation, retrieved from the billing API'
@@ -335,20 +335,20 @@
   description: 'The number of licenses purchased for the installation, retrieved from the billing API'
 - name: CHATWOOT_SUPPORT_WEBSITE_TOKEN
   value:
-  description: 'The Zeshan Desk website token, used to identify the Zeshan Desk inbox and display the "Contact Support" option on the billing page'
+  description: 'The Chatyst Desk website token, used to identify the Chatyst Desk inbox and display the "Contact Support" option on the billing page'
   type: secret
 - name: CHATWOOT_SUPPORT_SCRIPT_URL
   value:
-  description: 'The Zeshan Desk script base URL, to display the "Contact Support" option on the billing page'
+  description: 'The Chatyst Desk script base URL, to display the "Contact Support" option on the billing page'
 - name: CHATWOOT_SUPPORT_IDENTIFIER_HASH
   value:
-  description: 'The Zeshan Desk identifier hash, to validate the contact in the live chat window.'
+  description: 'The Chatyst Desk identifier hash, to validate the contact in the live chat window.'
   type: secret
 - name: ACCOUNT_SECURITY_NOTIFICATION_WEBHOOK_URL
   display_title: Webhook URL to post security analysis
   value:
-  description: Used to notify Zeshan Desk about account abuses, potential threads (Should be a Discord Webhook URL)
-# ------- End of Zeshan Desk Internal Config for Self Hosted ----#
+  description: Used to notify Chatyst Desk about account abuses, potential threads (Should be a Discord Webhook URL)
+# ------- End of Chatyst Desk Internal Config for Self Hosted ----#
 
 # ------- Compliance Related Config ----#
 - name: CHATWOOT_INSTANCE_ADMIN_EMAIL

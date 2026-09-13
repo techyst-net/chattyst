@@ -8,11 +8,11 @@ describe('PortalHelper', () => {
   describe('buildPortalURL', () => {
     it('returns the correct url', () => {
       window.chatwootConfig = {
-        hostURL: 'https://zeshan.local',
-        helpCenterURL: 'https://zeshan.local',
+        hostURL: 'https://chatyst.techyst.net',
+        helpCenterURL: 'https://chatyst.techyst.net',
       };
       expect(buildPortalURL('handbook')).toEqual(
-        'https://zeshan.local'
+        'https://chatyst.techyst.net'
       );
       window.chatwootConfig = {};
     });
@@ -21,19 +21,19 @@ describe('PortalHelper', () => {
   describe('buildPortalArticleURL', () => {
     it('returns the correct url', () => {
       window.chatwootConfig = {
-        hostURL: 'https://zeshan.local',
-        helpCenterURL: 'https://zeshan.local',
+        hostURL: 'https://chatyst.techyst.net',
+        helpCenterURL: 'https://chatyst.techyst.net',
       };
       expect(
         buildPortalArticleURL('handbook', 'culture', 'fr', 'article-slug')
-      ).toEqual('https://zeshan.local');
+      ).toEqual('https://chatyst.techyst.net');
       window.chatwootConfig = {};
     });
 
     it('returns the correct url with custom domain', () => {
       window.chatwootConfig = {
-        hostURL: 'https://zeshan.local',
-        helpCenterURL: 'https://zeshan.local',
+        hostURL: 'https://chatyst.techyst.net',
+        helpCenterURL: 'https://chatyst.techyst.net',
       };
       expect(
         buildPortalArticleURL(
@@ -48,8 +48,8 @@ describe('PortalHelper', () => {
 
     it('handles https in custom domain correctly', () => {
       window.chatwootConfig = {
-        hostURL: 'https://zeshan.local',
-        helpCenterURL: 'https://zeshan.local',
+        hostURL: 'https://chatyst.techyst.net',
+        helpCenterURL: 'https://chatyst.techyst.net',
       };
       expect(
         buildPortalArticleURL(
@@ -64,12 +64,12 @@ describe('PortalHelper', () => {
 
     it('uses hostURL when helpCenterURL is not available', () => {
       window.chatwootConfig = {
-        hostURL: 'https://zeshan.local',
+        hostURL: 'https://chatyst.techyst.net',
         helpCenterURL: '',
       };
       expect(
         buildPortalArticleURL('handbook', 'culture', 'fr', 'article-slug')
-      ).toEqual('https://zeshan.local');
+      ).toEqual('https://chatyst.techyst.net');
     });
   });
 

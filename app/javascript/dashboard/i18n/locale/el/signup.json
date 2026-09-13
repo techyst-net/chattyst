@@ -1,11 +1,11 @@
 {
   "REGISTER": {
     "TRY_WOOT": "Create an account",
-    "GET_STARTED": "Get started with Zeshan Desk",
+    "GET_STARTED": "Get started with Chatyst Desk",
     "TITLE": "Καταχώρηση",
     "TESTIMONIAL_HEADER": "Το μόνο που χρειάζεται είναι ένα βήμα για να προχωρήσουμε",
     "TESTIMONIAL_CONTENT": "Είστε ένα βήμα μακριά από την εμπλοκή των πελατών σας, και την εύρεση νέων.",
-    "TERMS_ACCEPT": "By creating an account, you agree to our <a href=\"https://zeshan.local\">T & C</a> and <a href=\"https://zeshan.local\">Privacy policy</a>",
+    "TERMS_ACCEPT": "By creating an account, you agree to our <a href=\"https://chatyst.techyst.net\">T & C</a> and <a href=\"https://chatyst.techyst.net\">Privacy policy</a>",
     "OAUTH": {
       "GOOGLE_SIGNUP": "Sign up with Google"
     },

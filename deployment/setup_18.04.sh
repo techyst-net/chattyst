@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Description: Zeshan Desk installation script
+# Description: Chatyst Desk installation script
 # OS: Ubuntu 18.04 LTS
 # Script Version: 0.2
 
@@ -77,8 +77,8 @@ cp /home/chatwoot/chatwoot/deployment/chatwoot.target /etc/systemd/system/chatwo
 systemctl enable chatwoot.target
 systemctl start chatwoot.target
 
-echo "Woot! Woot!! Zeshan Desk server installation is complete"
+echo "Woot! Woot!! Chatyst Desk server installation is complete"
 echo "The server will be accessible at http://<server-ip>:3000"
-echo "To configure a domain and SSL certificate, follow the guide at https://zeshan.local"
+echo "To configure a domain and SSL certificate, follow the guide at https://chatyst.techyst.net"
 
 # TODO: Auto-configure Nginx with SSL certificate

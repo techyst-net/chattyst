@@ -31,10 +31,10 @@ describe('#accountAPI', () => {
 
     it('#createAccount', () => {
       accountAPI.createAccount({
-        name: 'Zeshan Desk',
+        name: 'Chatyst Desk',
       });
       expect(axiosMock.post).toHaveBeenCalledWith('/api/v1/accounts', {
-        name: 'Zeshan Desk',
+        name: 'Chatyst Desk',
       });
     });
   });

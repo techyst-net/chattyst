@@ -20,7 +20,7 @@ describe('SearchSuggestions', () => {
         items: [
           {
             id: 1,
-            title: 'Zeshan Desk Glossary',
+            title: 'Chatyst Desk Glossary',
             content: 'Access Token',
             link: '/hc/user-guide/articles/1677141565-chatwoot-glossary',
           },

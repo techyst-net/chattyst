@@ -24,7 +24,7 @@ export function useAccountEnrichment(fields) {
       currentAccount.value?.custom_attributes?.onboarding_step === 'enrichment'
   );
 
-  // Best-effort match browser language to enabled Zeshan Desk locales: exact match
+  // Best-effort match browser language to enabled Chatyst Desk locales: exact match
   // first (e.g. 'pt_BR'), then base language (e.g. 'pt'), else the account
   // locale or 'en'.
   const detectBestLocale = () => {

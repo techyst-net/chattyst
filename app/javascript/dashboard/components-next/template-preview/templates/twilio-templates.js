@@ -129,18 +129,18 @@ export const twilioTemplates = [
     template_type: 'quick_reply',
   },
   {
-    body: 'What type of Zeshan Desk installation are you using? Select "Zeshan Desk Cloud" if you are using zeshan.local, otherwise select "Self-hosted Zeshan Desk".',
+    body: 'What type of Chatyst Desk installation are you using? Select "Chatyst Desk Cloud" if you are using chatyst.techyst.net, otherwise select "Self-hosted Chatyst Desk".',
     types: {
       'twilio/quick-reply': {
-        body: 'What type of Zeshan Desk installation are you using? Select "Zeshan Desk Cloud" if you are using zeshan.local, otherwise select "Self-hosted Zeshan Desk".',
+        body: 'What type of Chatyst Desk installation are you using? Select "Chatyst Desk Cloud" if you are using chatyst.techyst.net, otherwise select "Self-hosted Chatyst Desk".',
         actions: [
           {
-            id: 'Zeshan Desk Cloud_payload',
-            title: 'Zeshan Desk Cloud',
+            id: 'Chatyst Desk Cloud_payload',
+            title: 'Chatyst Desk Cloud',
           },
           {
             id: 'Self-hosted Chatwoot_payload',
-            title: 'Self-hosted Zeshan Desk',
+            title: 'Self-hosted Chatyst Desk',
           },
         ],
       },

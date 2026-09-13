@@ -24,7 +24,7 @@ class Twilio::VoiceWebhookSetupService
   end
 
   def create_twiml_app!
-    friendly_name = "Zeshan Desk Voice #{channel.phone_number}"
+    friendly_name = "Chatyst Desk Voice #{channel.phone_number}"
     app = channel.client.applications.create(
       friendly_name: friendly_name,
       voice_url: channel.voice_call_webhook_url,
@@ -66,7 +66,7 @@ class Twilio::VoiceWebhookSetupService
   end
 
   def create_twiml_app!
-    friendly_name = "Zeshan Desk Voice #{channel.phone_number}"
+    friendly_name = "Chatyst Desk Voice #{channel.phone_number}"
     app = channel.client.applications.create(
       friendly_name: friendly_name,
       voice_url: channel.voice_call_webhook_url,

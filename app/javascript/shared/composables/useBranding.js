@@ -7,10 +7,10 @@ import { useMapGetter } from 'dashboard/composables/store.js';
 export function useBranding() {
   const globalConfig = useMapGetter('globalConfig/get');
   /**
-   * Replaces "Zeshan Desk" (any casing) in text with the installation name from
+   * Replaces "Chatyst Desk" (any casing) in text with the installation name from
    * global config
    * @param {string} text - The text to process
-   * @returns {string} - Text with "Zeshan Desk" replaced by installation name
+   * @returns {string} - Text with "Chatyst Desk" replaced by installation name
    */
   const replaceInstallationName = text => {
     if (!text) return text;

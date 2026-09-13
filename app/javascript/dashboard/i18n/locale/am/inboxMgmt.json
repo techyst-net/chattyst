@@ -50,7 +50,7 @@
         "PICK_NAME": "ለInboxዎ ስም ይምረጡ",
         "PICK_A_VALUE": "እሴት ይምረጡ",
         "CREATE_INBOX": "Inbox ፍጠር",
-        "RESTRICTED_WARNING": "Facebook inbox creation is temporarily unavailable due to an API-level issue on Meta’s side, not a problem with Zeshan Desk. We’re working closely with Meta to resolve it as quickly as possible.",
+        "RESTRICTED_WARNING": "Facebook inbox creation is temporarily unavailable due to an API-level issue on Meta’s side, not a problem with Chatyst Desk. We’re working closely with Meta to resolve it as quickly as possible.",
         "STATUS_LINK": "View status updates"
       },
       "INSTAGRAM": {
@@ -61,8 +61,8 @@
         "ERROR_AUTH": "Instagram ጋር ለመገናኘት ስህተት አጋጥሟል፣ እባክዎ እንደገና ይሞክሩ",
         "NEW_INBOX_SUGGESTION": "ይህ የInstagram መለያ ቀድሞ ወደ ሌላ ኢንቦክስ ተገናኝቷል እና አሁን ወደዚህ ተለዋዋጭ ሆኗል። አዲስ መልእክቶች ሁሉ እዚህ ይታያሉ። አሮጌው ኢንቦክስ ለዚህ መለያ መልእክት ማስተላለፍ እና መቀበል አይችልም።.",
         "DUPLICATE_INBOX_BANNER": "ይህ የInstagram መለያ ወደ አዲሱ የInstagram ቻናል ኢንቦክስ ተለዋዋጭ ሆኗል። ከዚህ ኢንቦክስ የInstagram መልእክቶችን መላክ/መቀበል አትችሉም።.",
-        "RESTRICTED_WARNING": "Instagram inbox creation is temporarily unavailable due to an API-level issue on Meta’s side, not a problem with Zeshan Desk. We’re working closely with Meta to resolve it as quickly as possible.",
-        "SETTINGS_RESTRICTED_WARNING": "Instagram messaging is currently affected by an API-level issue on Meta’s side, not a problem with Zeshan Desk. Some messages or actions may be delayed or unavailable. We’re working closely with Meta to resolve it as quickly as possible.",
+        "RESTRICTED_WARNING": "Instagram inbox creation is temporarily unavailable due to an API-level issue on Meta’s side, not a problem with Chatyst Desk. We’re working closely with Meta to resolve it as quickly as possible.",
+        "SETTINGS_RESTRICTED_WARNING": "Instagram messaging is currently affected by an API-level issue on Meta’s side, not a problem with Chatyst Desk. Some messages or actions may be delayed or unavailable. We’re working closely with Meta to resolve it as quickly as possible.",
         "STATUS_LINK": "View status updates"
       },
       "TIKTOK": {
@@ -329,17 +329,17 @@
           "MANUAL_LINK_TEXT": "የእጅ ማቀናበሪያ ሂደት",
           "ACCESS_REQUEST": {
             "TITLE": "ከMeta ጋር ፈጣን ቅንብር",
-            "DESCRIPTION": "Connect a new number or an existing number from the WhatsApp Business app without manual configuration. To request this option, tell our team what your business does, how you’ll use WhatsApp, and which Zeshan Desk account needs access.",
+            "DESCRIPTION": "Connect a new number or an existing number from the WhatsApp Business app without manual configuration. To request this option, tell our team what your business does, how you’ll use WhatsApp, and which Chatyst Desk account needs access.",
             "FOOTNOTE": "We’ll review your request and let you know if this option can be enabled. You can also continue with manual setup below.",
             "BUTTON": "Request access"
           },
-          "RESTRICTED_WARNING": "WhatsApp Embedded Signup is temporarily unavailable due to an API-level issue on Meta’s side, not a problem with Zeshan Desk. You can use manual setup for eligible Cloud API numbers. We’re working closely with Meta to resolve it as quickly as possible.",
+          "RESTRICTED_WARNING": "WhatsApp Embedded Signup is temporarily unavailable due to an API-level issue on Meta’s side, not a problem with Chatyst Desk. You can use manual setup for eligible Cloud API numbers. We’re working closely with Meta to resolve it as quickly as possible.",
           "STATUS_LINK": "View status updates",
           "CALLING_ENABLE_FAILED": "Your WhatsApp inbox is ready, but voice calling couldn't be turned on — this number isn't enrolled in the WhatsApp Business Calling API yet. Reach out to Meta or your WhatsApp Business Solution Provider to onboard it, then turn calling on from the inbox's Calls settings."
         },
         "API": {
           "ERROR_MESSAGE": "WhatsApp ቻናሉን ማስቀመጥ አልተቻለም",
-          "MANUAL_RESTRICTION_WARNING": "WhatsApp Embedded Signup is temporarily unavailable due to an API-level issue on Meta’s side, not a problem with Zeshan Desk. Manual setup works only for numbers already connected to WhatsApp Cloud API. Numbers using WhatsApp Business app coexistence are not supported in this flow yet. We’re working closely with Meta to resolve the issue as quickly as possible. Thanks for your patience.",
+          "MANUAL_RESTRICTION_WARNING": "WhatsApp Embedded Signup is temporarily unavailable due to an API-level issue on Meta’s side, not a problem with Chatyst Desk. Manual setup works only for numbers already connected to WhatsApp Cloud API. Numbers using WhatsApp Business app coexistence are not supported in this flow yet. We’re working closely with Meta to resolve the issue as quickly as possible. Thanks for your patience.",
           "STATUS_LINK": "View status updates"
         }
       },
@@ -469,7 +469,7 @@
       },
       "AUTH": {
         "TITLE": "ቻናል ይምረጡ",
-        "DESC": "Zeshan Desk የቀጥታ ውይይት ዊጅቶች፣ Facebook Messenger፣ WhatsApp፣ ኢሜይሎች እና ሌሎች ቻናሎችን ይደግፋል። በተለይ ቻናል ለመፍጠር ከፈለጉ በAPI ቻናል መፍጠር ይችላሉ። ለመጀመር ከታች አንዱን ቻናል ይምረጡ።.",
+        "DESC": "Chatyst Desk የቀጥታ ውይይት ዊጅቶች፣ Facebook Messenger፣ WhatsApp፣ ኢሜይሎች እና ሌሎች ቻናሎችን ይደግፋል። በተለይ ቻናል ለመፍጠር ከፈለጉ በAPI ቻናል መፍጠር ይችላሉ። ለመጀመር ከታች አንዱን ቻናል ይምረጡ።.",
         "TITLE_NEXT": "ቅንብሩን አሟልተው ያጠናቀቁ",
         "TITLE_FINISH": "እሺ!",
         "CHANNEL": {
@@ -531,7 +531,7 @@
       },
       "DETAILS": {
         "TITLE": "የኢንቦክስ ዝርዝሮች",
-        "DESC": "ከታች ያለው ከዝርዝር ማስተካከያ በተጠቃሚው ፌስቡክ ገጽ ወደ Zeshan Desk ለመገናኘት ይምረጡ። ለምርጥ መለያየት የእርስዎን ኢንቦክስ በተለየ ስም ማቅረብ ይችላሉ።"
+        "DESC": "ከታች ያለው ከዝርዝር ማስተካከያ በተጠቃሚው ፌስቡክ ገጽ ወደ Chatyst Desk ለመገናኘት ይምረጡ። ለምርጥ መለያየት የእርስዎን ኢንቦክስ በተለየ ስም ማቅረብ ይችላሉ።"
       },
       "FINISH": {
         "TITLE": "ተሳክቷል!",
@@ -903,7 +903,7 @@
       "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_ADD_TITLE": "Add Business Management Token",
       "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_REPLACE_TITLE": "Replace Business Management Token",
       "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_CONFIGURED": "Business management token configured",
-      "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_UPDATE_SUBHEADER": "Provide a token with access to this WhatsApp Business Account when Zeshan Desk cannot retrieve its message templates. Zeshan Desk uses this token only for template synchronization.",
+      "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_UPDATE_SUBHEADER": "Provide a token with access to this WhatsApp Business Account when Chatyst Desk cannot retrieve its message templates. Chatyst Desk uses this token only for template synchronization.",
       "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_UPDATE_PLACEHOLDER": "Enter the business management token",
       "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_ADD_BUTTON": "Add",
       "WHATSAPP_BUSINESS_MANAGEMENT_TOKEN_REPLACE_BUTTON": "Replace",
@@ -978,7 +978,7 @@
           "INBOX": "Inbox",
           "PHONE_NUMBER": "ስልክ ቁጥር",
           "NOT_ENTERED": "Not entered",
-          "VERIFY_NOTICE": "Zeshan Desk will verify these credentials with Meta before applying any changes. If verification fails, the current configuration is left untouched.",
+          "VERIFY_NOTICE": "Chatyst Desk will verify these credentials with Meta before applying any changes. If verification fails, the current configuration is left untouched.",
           "BACK": "Back",
           "CANCEL": "Cancel",
           "CONTINUE": "ቀጥል",
@@ -1000,7 +1000,7 @@
           },
           "REVIEW_MIGRATION": {
             "TITLE": "Review migration",
-            "DESCRIPTION": "Confirm the connection details before reconnecting this inbox. Zeshan Desk will verify the token, WABA, and phone number with Meta before applying changes."
+            "DESCRIPTION": "Confirm the connection details before reconnecting this inbox. Chatyst Desk will verify the token, WABA, and phone number with Meta before applying changes."
           }
         }
       },

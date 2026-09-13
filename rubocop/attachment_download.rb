@@ -1,8 +1,8 @@
 require 'rubocop'
 
-module RuboCop::Cop::Zeshan Desk; end
+module RuboCop::Cop::Chatyst Desk; end
 
-class RuboCop::Cop::Zeshan Desk::AttachmentDownload < RuboCop::Cop::Base
+class RuboCop::Cop::Chatyst Desk::AttachmentDownload < RuboCop::Cop::Base
   MSG = 'Avoid calling `.file/.blob.download`; use `blob.open` or streaming IO instead.'.freeze
 
   def_node_matcher :unsafe_download?, <<~PATTERN

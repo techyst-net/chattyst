@@ -141,7 +141,7 @@ const handleUpdatePortal = updatePortalSettings;
 const handleUpdatePortalConfiguration = portalObj => {
   updatePortalSettings(portalObj);
 
-  // If custom domain is added or updated, fetch SSL status after a delay of 5 seconds (only on Zeshan Desk cloud)
+  // If custom domain is added or updated, fetch SSL status after a delay of 5 seconds (only on Chatyst Desk cloud)
   if (portalObj?.custom_domain && isOnChatwootCloud.value) {
     setTimeout(() => {
       fetchSSLStatus();

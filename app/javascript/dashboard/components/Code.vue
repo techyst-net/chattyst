@@ -22,7 +22,7 @@ const props = defineProps({
   },
   codepenTitle: {
     type: String,
-    default: 'Zeshan Desk Codepen',
+    default: 'Chatyst Desk Codepen',
   },
 });
 

@@ -44,7 +44,7 @@ class Crm::Leadsquared::Mappers::ContactMapper
   end
 
   def brand_name
-    ::GlobalConfig.get('BRAND_NAME')['BRAND_NAME'] || 'Zeshan Desk'
+    ::GlobalConfig.get('BRAND_NAME')['BRAND_NAME'] || 'Chatyst Desk'
   end
 
   def brand_name_without_spaces

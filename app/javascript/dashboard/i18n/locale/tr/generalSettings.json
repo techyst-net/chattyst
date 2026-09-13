@@ -126,8 +126,8 @@
     "UPDATE_CHATWOOT": "{latestChatwootVersion} chatwoot sürümü indirilebilir. Lütfen sürümü güncelleyin.",
     "LEARN_MORE": "Daha Fazla",
     "PAYMENT_PENDING": "Ödemeniz bekliyor. Devam etmek için ödeme bilgilerinizi güncelleyin.",
-    "UPGRADE": "Zeshan Desk'u kullanmaya devam etmek için yükseltin",
-    "LIMITS_UPGRADE": "Hesabınız kullanım sınırlarını aştı, lütfen Zeshan Desk'u kullanmaya devam etmek için planınızı yükseltin",
+    "UPGRADE": "Chatyst Desk'u kullanmaya devam etmek için yükseltin",
+    "LIMITS_UPGRADE": "Hesabınız kullanım sınırlarını aştı, lütfen Chatyst Desk'u kullanmaya devam etmek için planınızı yükseltin",
     "OPEN_BILLING": "Fatura Detayları"
   },
   "FORMS": {

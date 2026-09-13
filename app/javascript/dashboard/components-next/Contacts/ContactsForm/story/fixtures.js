@@ -7,7 +7,7 @@ export const contactData = {
     city: 'Kerala',
     country: 'India',
     description: 'Curious about the web.',
-    companyName: 'Zeshan Desk',
+    companyName: 'Chatyst Desk',
     countryCode: 'IN',
     socialProfiles: {
       github: 'johndoe',

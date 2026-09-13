@@ -43,7 +43,7 @@ Style/SymbolArray:
 Style/OpenStructUse:
   Enabled: false
 
-Zeshan Desk/AttachmentDownload:
+Chatyst Desk/AttachmentDownload:
   Enabled: true
   Exclude:
     - 'spec/**/*'

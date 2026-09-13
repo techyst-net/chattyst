@@ -58,7 +58,7 @@ class AccountSamlSettings < ApplicationRecord
   end
 
   def installation_name
-    GlobalConfigService.load('INSTALLATION_NAME', 'Zeshan Desk')
+    GlobalConfigService.load('INSTALLATION_NAME', 'Chatyst Desk')
   end
 
   def update_account_users_provider

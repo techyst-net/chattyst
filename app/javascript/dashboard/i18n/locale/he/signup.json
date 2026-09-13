@@ -1,11 +1,11 @@
 {
   "REGISTER": {
     "TRY_WOOT": "צור חשבון",
-    "GET_STARTED": "Get started with Zeshan Desk",
+    "GET_STARTED": "Get started with Chatyst Desk",
     "TITLE": "הירשם",
     "TESTIMONIAL_HEADER": "כל מה שצריך זה צעד אחד כדי להתקדם",
     "TESTIMONIAL_CONTENT": "אתה במרחק צעד אחד מלהפעיל את הלקוחות שלך, לשמר אותם ולמצוא חדשים.",
-    "TERMS_ACCEPT": "על ידי יצירת חשבון, אתה מסכים ל<a href=\"https://zeshan.local\">תנאים וההגבלות</a> ול-<a href=\"https://zeshan.local שלנו privacy-policy\">מדיניות הפרטיות</a>",
+    "TERMS_ACCEPT": "על ידי יצירת חשבון, אתה מסכים ל<a href=\"https://chatyst.techyst.net\">תנאים וההגבלות</a> ול-<a href=\"https://chatyst.techyst.net שלנו privacy-policy\">מדיניות הפרטיות</a>",
     "OAUTH": {
       "GOOGLE_SIGNUP": "הירשם לגוגל"
     },

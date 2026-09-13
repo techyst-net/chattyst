@@ -1,11 +1,11 @@
 {
   "REGISTER": {
     "TRY_WOOT": "Créer un compte",
-    "GET_STARTED": "Commencez avec Zeshan Desk",
+    "GET_STARTED": "Commencez avec Chatyst Desk",
     "TITLE": "Inscription",
     "TESTIMONIAL_HEADER": "Il suffit d'une étape pour avancer",
     "TESTIMONIAL_CONTENT": "Vous n'êtes plus qu'à un pas d'engager vos clients, de les fidéliser et d'en trouver de nouveaux.",
-    "TERMS_ACCEPT": "En créant un compte, vous acceptez nos <a href=\"https://zeshan.local\">CGU</a> et notre <a href=\"https://zeshan.local\">Politique de confidentialité</a>",
+    "TERMS_ACCEPT": "En créant un compte, vous acceptez nos <a href=\"https://chatyst.techyst.net\">CGU</a> et notre <a href=\"https://chatyst.techyst.net\">Politique de confidentialité</a>",
     "OAUTH": {
       "GOOGLE_SIGNUP": "Inscrivez-vous avec Google"
     },

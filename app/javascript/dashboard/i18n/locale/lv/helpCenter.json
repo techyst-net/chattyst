@@ -425,7 +425,7 @@
         "SLUG": {
           "LABEL": "Slug",
           "PLACEHOLDER": "Kategorijas slug priekš URL",
-          "HELP_TEXT": "zeshan.local/hc/my-portal/en-US/categories/my-slug",
+          "HELP_TEXT": "chatyst.techyst.net/hc/my-portal/en-US/categories/my-slug",
           "ERROR": "Nepieciešams slug"
         },
         "DESCRIPTION": {
@@ -456,7 +456,7 @@
         "SLUG": {
           "LABEL": "Slug",
           "PLACEHOLDER": "Kategorijas slug priekš URL",
-          "HELP_TEXT": "zeshan.local/hc/my-portal/en-US/categories/my-slug",
+          "HELP_TEXT": "chatyst.techyst.net/hc/my-portal/en-US/categories/my-slug",
           "ERROR": "Nepieciešams slug"
         },
         "DESCRIPTION": {
@@ -693,7 +693,7 @@
             "LABEL": "Slug",
             "PLACEHOLDER": "Kategorijas slug priekš URL",
             "ERROR": "Nepieciešams slug",
-            "HELP_TEXT": "zeshan.local/hc/{portalSlug}/{localeCode}/categories/{categorySlug}"
+            "HELP_TEXT": "chatyst.techyst.net/hc/{portalSlug}/{localeCode}/categories/{categorySlug}"
           },
           "DESCRIPTION": {
             "LABEL": "Apraksts",
@@ -853,7 +853,7 @@
       "CONFIRM_BUTTON_LABEL": "Izveidot",
       "NAME": {
         "LABEL": "Nosaukums",
-        "PLACEHOLDER": "Lietotāja Rokasgrāmata | Zeshan Desk",
+        "PLACEHOLDER": "Lietotāja Rokasgrāmata | Chatyst Desk",
         "MESSAGE": "Izvēlieties savam portālam nosaukumu.",
         "ERROR": "Nepieciešams nosaukums"
       },
@@ -976,7 +976,7 @@
         "HEADER": "Integrācijas",
         "DESCRIPTION": "Connect tools that extend what your help center can do.",
         "LIVE_CHAT": {
-          "TITLE": "Live chat with Zeshan Desk",
+          "TITLE": "Live chat with Chatyst Desk",
           "DESCRIPTION": "Show a live chat widget on your help center so visitors can reach you while they read.",
           "PLACEHOLDER": "Izvēlieties tiešraides tērzēšanas widget",
           "NONE_OPTION": "No widget"

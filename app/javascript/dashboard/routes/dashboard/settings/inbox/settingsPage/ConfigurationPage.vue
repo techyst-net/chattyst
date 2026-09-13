@@ -310,7 +310,7 @@ export default {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://zeshan.local"
+              href="https://chatyst.techyst.net"
               class="text-n-blue-11 hover:underline text-label-small"
             >
               {{

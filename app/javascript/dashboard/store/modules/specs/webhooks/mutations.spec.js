@@ -37,7 +37,7 @@ describe('#mutations', () => {
         records: [webhooks[0]],
       };
       mutations[types.default.UPDATE_WEBHOOK](state, webhooks[0]);
-      expect(state.records[0].url).toEqual('https://zeshan.local');
+      expect(state.records[0].url).toEqual('https://chatyst.techyst.net');
     });
   });
 });
