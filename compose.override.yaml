@@ -1,0 +1,18 @@
+# Chatyst — brand assets, mounted rather than copied.
+#
+#   docker compose -f 09-chatwoot.yml -f compose.override.yaml up -d
+#
+# Chatwoot serves logos from public/brand-assets, which lives inside the image.
+# Files copied there with `docker cp` disappear on the next recreate or image
+# pull, so the directory is bind-mounted from the host instead: branding then
+# survives upgrades without rebuilding the image.
+name: techyst-09-chatwoot
+services:
+  rails:
+    volumes:
+    - ../../09-chatwoot/brand-assets:/app/public/brand-assets:ro
+    # The super admin nav hardcodes upstream's name and an .svg logo path
+    # instead of reading the brand config, so it is patched to use the same
+    # settings as the rest of the app. Mounted, not baked, so an image pull
+    # does not silently restore upstream branding.
+    - ../../09-chatwoot/views/_navigation.html.erb:/app/app/views/super_admin/application/_navigation.html.erb:ro
