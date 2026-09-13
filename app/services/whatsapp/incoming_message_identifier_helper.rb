@@ -99,9 +99,8 @@ module Whatsapp::IncomingMessageIdentifierHelper
     return { name: name } if phone_number.blank?
 
     formatted_phone_number = "+#{phone_number}"
-    candidates = phone_number_candidates(phone_number).drop(1).map { |candidate| "+#{candidate}" }
     display_name = name == phone_identifier ? formatted_phone_number : name
-    { name: display_name, phone_number: formatted_phone_number, phone_number_candidates: candidates.presence }.compact
+    { name: display_name, phone_number: formatted_phone_number }
   end
 
   def update_whatsapp_identifiers(source_ids: [], username: nil, phone_number: nil)

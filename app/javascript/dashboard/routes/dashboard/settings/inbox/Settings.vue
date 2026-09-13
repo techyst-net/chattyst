@@ -29,7 +29,6 @@ import CustomerSatisfactionPage from './settingsPage/CustomerSatisfactionPage.vu
 import CollaboratorsPage from './settingsPage/CollaboratorsPage.vue';
 import BotConfiguration from './components/BotConfiguration.vue';
 import AccountHealth from './components/AccountHealth.vue';
-import TwilioHealth from './components/TwilioHealth.vue';
 import WhatsappManualMigrationDialog from './components/WhatsappManualMigrationDialog.vue';
 import WhatsappManualMigrationBanner from './components/WhatsappManualMigrationBanner.vue';
 import { FEATURE_FLAGS } from '../../../../featureFlags';
@@ -84,7 +83,6 @@ export default {
     ColorPicker,
     SelectInput,
     AccountHealth,
-    TwilioHealth,
     WhatsappManualMigrationDialog,
     WhatsappManualMigrationBanner,
     Widget,
@@ -162,15 +160,8 @@ export default {
     selectedTabKey() {
       return this.tabs[this.selectedTabIndex]?.key;
     },
-    // AccountHealth renders the structured provider error; TwilioHealth only needs the message.
-    healthErrorMessage() {
-      return this.healthError?.message || '';
-    },
     shouldShowWhatsAppConfiguration() {
       return this.isAWhatsAppCloudChannel;
-    },
-    shouldShowTwilioHealth() {
-      return this.isATwilioChannel && this.inbox.medium === 'sms';
     },
     whatsAppAPIProviderName() {
       if (this.isAWhatsAppCloudChannel) {
@@ -251,16 +242,6 @@ export default {
           ...visibleToAllChannelTabs,
           {
             key: 'whatsapp-health',
-            name: this.$t('INBOX_MGMT.TABS.ACCOUNT_HEALTH'),
-          },
-        ];
-      }
-
-      if (this.shouldShowTwilioHealth) {
-        visibleToAllChannelTabs = [
-          ...visibleToAllChannelTabs,
-          {
-            key: 'twilio-health',
             name: this.$t('INBOX_MGMT.TABS.ACCOUNT_HEALTH'),
           },
         ];
@@ -409,6 +390,11 @@ export default {
       return (
         this.isAWhatsAppCloudChannel &&
         this.isEmbeddedSignupWhatsApp &&
+        (!this.isOnChatwootCloud ||
+          this.isFeatureEnabledonAccount(
+            this.accountId,
+            FEATURE_FLAGS.WHATSAPP_EMBEDDED_SIGNUP_FLOW
+          )) &&
         this.inbox.reauthorization_required
       );
     },
@@ -591,7 +577,7 @@ export default {
     async fetchHealthData() {
       if (!this.inbox) return;
 
-      if (!this.isAWhatsAppCloudChannel && !this.shouldShowTwilioHealth) {
+      if (!this.isAWhatsAppCloudChannel) {
         return;
       }
 
@@ -630,7 +616,6 @@ export default {
         useAlert(this.$t('INBOX_MGMT.ACCOUNT_HEALTH.WEBHOOK.REGISTER_SUCCESS'));
         await this.fetchHealthData();
       } catch (error) {
-        // Same as the health fetch: the provider's own message is the actionable part.
         useAlert(
           error.response?.data?.error ||
             error.message ||
@@ -1446,15 +1431,6 @@ export default {
             :is-registering-webhook="isRegisteringWebhook"
             @register-webhook="registerWebhook"
             @go-to-configuration="goToWhatsAppConfiguration"
-          />
-        </div>
-        <div v-if="selectedTabKey === 'twilio-health'">
-          <TwilioHealth
-            :health-data="healthData"
-            :is-loading="isLoadingHealth"
-            :error="healthErrorMessage"
-            :is-registering-webhook="isRegisteringWebhook"
-            @register-webhook="registerWebhook"
           />
         </div>
         <WhatsappManualMigrationDialog

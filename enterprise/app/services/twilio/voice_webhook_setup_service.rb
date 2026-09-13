@@ -14,20 +14,25 @@ class Twilio::VoiceWebhookSetupService
     app_sid
   end
 
-  # Outbound calls dial through the TwiML app, so its voice_url must track the current host too.
-  def sync_twiml_app!
-    return create_twiml_app! if channel.twiml_app_sid.blank?
+  private
 
-    channel.client.applications(channel.twiml_app_sid).update(
+  def validate_token_credentials!
+    channel.client.incoming_phone_numbers.list(limit: 1)
+  rescue StandardError => e
+    log_twilio_error('AUTH_VALIDATION_TOKEN', e)
+    raise
+  end
+
+  def create_twiml_app!
+    friendly_name = "Zeshan Desk Voice #{channel.phone_number}"
+    app = channel.client.applications.create(
+      friendly_name: friendly_name,
       voice_url: channel.voice_call_webhook_url,
       voice_method: HTTP_METHOD
     )
-    channel.twiml_app_sid
+    app.sid
   rescue StandardError => e
-    # The stored app was deleted in Twilio, so there is nothing to update; make a fresh one.
-    return create_twiml_app! if e.is_a?(Twilio::REST::RestError) && e.status_code == 404
-
-    log_twilio_error('TWIML_APP_UPDATE', e)
+    log_twilio_error('TWIML_APP_CREATE', e)
     raise
   end
 

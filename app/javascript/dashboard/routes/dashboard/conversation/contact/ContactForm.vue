@@ -66,7 +66,6 @@ export default {
         { key: 'linkedin', prefixURL: 'https://linkedin.com/' },
         { key: 'github', prefixURL: 'https://github.com/' },
         { key: 'telegram', prefixURL: 'https://t.me/' },
-        { key: 'whatsapp', prefixURL: '@' },
         { key: 'tiktok', prefixURL: 'https://tiktok.com/@' },
       ],
     };
@@ -127,9 +126,6 @@ export default {
     this.setDialCode();
   },
   methods: {
-    normalizeWhatsAppUsername(value) {
-      return value?.toString().replace(/^@+/, '') || '';
-    },
     onCancel() {
       this.$emit('cancel');
     },
@@ -182,10 +178,8 @@ export default {
         social_profiles: socialProfiles = {},
         screen_name: twitterScreenName,
         social_telegram_user_name: telegramUserName,
-        social_whatsapp_user_name: whatsappUserName,
       } = additionalAttributes;
       this.socialProfileUserNames = {
-        ...socialProfiles,
         twitter: socialProfiles.twitter || twitterScreenName || '',
         facebook: socialProfiles.facebook || '',
         linkedin: socialProfiles.linkedin || '',
@@ -193,9 +187,6 @@ export default {
         telegram: socialProfiles.telegram || telegramUserName || '',
         instagram: socialProfiles.instagram || '',
         tiktok: socialProfiles.tiktok || '',
-        whatsapp: this.normalizeWhatsAppUsername(
-          socialProfiles.whatsapp || whatsappUserName || ''
-        ),
       };
     },
     getContactObject() {
@@ -205,12 +196,6 @@ export default {
           name: '',
         };
       }
-      const socialProfileUserNames = {
-        ...this.socialProfileUserNames,
-        whatsapp: this.normalizeWhatsAppUsername(
-          this.socialProfileUserNames.whatsapp
-        ),
-      };
       const contactObject = {
         id: this.contact.id,
         name: this.name,
@@ -227,7 +212,7 @@ export default {
               ? ''
               : this.country.name,
           city: this.city,
-          social_profiles: socialProfileUserNames,
+          social_profiles: this.socialProfileUserNames,
         },
       };
       if (this.avatarFile) {

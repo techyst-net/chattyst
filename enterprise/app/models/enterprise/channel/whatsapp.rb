@@ -1,6 +1,4 @@
 module Enterprise::Channel::Whatsapp
-  include Concerns::CallRecordingSettings
-
   attr_reader :last_provider_error
 
   def send_template(...)

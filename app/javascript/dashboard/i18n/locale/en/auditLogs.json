@@ -30,8 +30,7 @@
         "WEBHOOKS": "Webhooks",
         "AUTOMATION_RULES": "Automation rules",
         "MACROS": "Macros",
-        "CONVERSATION_DELETIONS": "Conversation deletions",
-      "MESSAGE_DELETIONS": "Message deletions"
+        "CONVERSATION_DELETIONS": "Conversation deletions"
       },
       "SORT": {
         "NEWEST": "Newest first",
@@ -103,9 +102,6 @@
     },
     "CONVERSATION": {
       "DELETE": "{agentName} deleted conversation #{id}"
-    },
-    "MESSAGE": {
-      "DELETE": "{agentName} deleted a message in conversation #{conversationId}"
     }
   }
 }

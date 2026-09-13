@@ -5,7 +5,8 @@ class Voice::Provider::Twilio::RecordingAttachmentService
   pattr_initialize [:call!, :recording_sid!, :recording_url!, { recording_duration: nil }]
 
   def perform
-    return unless attachable?
+    return if recording_sid.blank? || recording_url.blank?
+    return if already_attached?
 
     SafeFetch.fetch(
       recording_url,
@@ -25,14 +26,6 @@ class Voice::Provider::Twilio::RecordingAttachmentService
   end
 
   private
-
-  def attachable?
-    return false if recording_sid.blank? || recording_url.blank?
-    # Twilio shouldn't deliver a recording for a do-not-record conference, but the callback is public: the snapshot decides.
-    return false unless call.recording_enabled?
-
-    !already_attached?
-  end
 
   def persist_recording!(result)
     call.with_lock do

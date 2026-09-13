@@ -119,7 +119,7 @@ class Twilio::IncomingMessageService
     {
       name: contact_name,
       phone_number: phone_number.presence,
-      additional_attributes: additional_attributes, phone_number_candidates: twilio_whatsapp_phone_number_candidates
+      additional_attributes: additional_attributes
     }
   end
 
@@ -191,7 +191,7 @@ class Twilio::IncomingMessageService
     return if params[:ProfileName].blank?
     return if @contact.name == params[:ProfileName]
 
-    # Only update if current name exactly matches a phone number candidate
+    # Only update if current name exactly matches the phone number or formatted phone number
     return unless contact_name_matches_phone_number?
 
     @contact.update!(name: params[:ProfileName])
@@ -200,16 +200,6 @@ class Twilio::IncomingMessageService
   def contact_name_matches_phone_number?
     return false if phone_number.blank?
 
-    phone_name_candidates.include?(@contact.name)
-  end
-
-  def phone_name_candidates
-    [phone_number, formatted_phone_number, *formatted_twilio_whatsapp_phone_number_candidates].compact_blank.uniq
-  end
-
-  def formatted_twilio_whatsapp_phone_number_candidates
-    Array(twilio_whatsapp_phone_number_candidates).flat_map do |candidate|
-      [candidate, TelephoneNumber.parse(candidate).international_number]
-    end
+    @contact.name == phone_number || @contact.name == formatted_phone_number
   end
 end

@@ -136,25 +136,6 @@ describe('Helper functions', () => {
       });
     });
 
-    it('should handle Message destroy with the conversation display id', () => {
-      const auditLogItem = {
-        auditable_type: 'Message',
-        action: 'destroy',
-        user_id: 1,
-        auditable_id: 55123,
-        audited_changes: {
-          display_id: 1234,
-        },
-      };
-
-      const payload = generateTranslationPayload(auditLogItem, agentList);
-      expect(payload).toEqual({
-        agentName: 'Agent 1',
-        id: 55123,
-        conversationId: 1234,
-      });
-    });
-
     it('should handle generic case like Team create', () => {
       const auditLogItem = {
         auditable_type: 'Team',
@@ -198,18 +179,6 @@ describe('Helper functions', () => {
 
       const logActionKey = generateLogActionKey(auditLogItem);
       expect(logActionKey).toEqual('AUDIT_LOGS.ACCOUNT_USER.EDIT.OTHER');
-    });
-
-    it('should generate correct action key when a message is deleted', () => {
-      const auditLogItem = {
-        auditable_type: 'Message',
-        action: 'destroy',
-        user_id: 1,
-        auditable_id: 42,
-      };
-
-      const logActionKey = generateLogActionKey(auditLogItem);
-      expect(logActionKey).toEqual('AUDIT_LOGS.MESSAGE.DELETE');
     });
 
     it('should generate correct action key when updating a deleted user', () => {

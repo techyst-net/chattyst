@@ -2,7 +2,6 @@
 import { computed, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import MessageFormatter from 'shared/helpers/MessageFormatter';
-import { embeds } from 'dashboard/helper/markdownEmbeds';
 import {
   renderInlineDiff,
   buildDiffBlocks,
@@ -51,9 +50,10 @@ const contentChanged = computed(() =>
 const COLWIDTHS_RE = /<!--cw-colwidths:([\d,]+)-->/;
 const DEFAULT_COL_WIDTH = 50;
 
-const applyColumnWidths = (doc, widths) => {
+const applyColumnWidths = (html, widths) => {
+  const doc = new DOMParser().parseFromString(html, 'text/html');
   const table = doc.body.querySelector('table');
-  if (!table) return;
+  if (!table) return html;
 
   const sized = widths.map(width => (width > 0 ? width : DEFAULT_COL_WIDTH));
   const colgroup = doc.createElement('colgroup');
@@ -66,44 +66,16 @@ const applyColumnWidths = (doc, widths) => {
 
   table.style.tableLayout = 'fixed';
   table.style.width = `${sized.reduce((sum, width) => sum + width, 0)}px`;
-};
-
-// Match the portal renderer: solo video links become players, sized by their
-// cw_video_width param. (Images are sized by MessageFormatter itself.)
-const videoEmbeds = embeds.filter(embed => embed.hideSource);
-const DEFAULT_VIDEO_WIDTH = 640;
-
-const savedVideoWidth = href => {
-  const width = Number(href.match(/[?&]cw_video_width=(\d+)px(?:[&#]|$)/)?.[1]);
-  return width >= 1 && width <= 2000 ? width : null;
-};
-
-const applyVideoPreviews = doc => {
-  doc.body.querySelectorAll('p > a:only-child').forEach(link => {
-    const href = link.getAttribute('href');
-    if (!href || !videoEmbeds.some(({ regex }) => regex.test(href))) return;
-    const paragraph = link.parentElement;
-    if (paragraph.textContent.trim() !== link.textContent.trim()) return;
-
-    const video = Object.assign(doc.createElement('video'), {
-      controls: true,
-      preload: 'metadata',
-      src: href,
-      width: savedVideoWidth(href) || DEFAULT_VIDEO_WIDTH,
-      className: 'max-w-full h-auto',
-    });
-    paragraph.replaceWith(video);
-  });
+  return doc.body.innerHTML;
 };
 
 const renderMarkdown = markdown => {
   if (!markdown) return '';
   const html = new MessageFormatter(markdown).formattedMessage;
-  const doc = new DOMParser().parseFromString(html, 'text/html');
   const match = markdown.match(COLWIDTHS_RE);
-  if (match) applyColumnWidths(doc, match[1].split(',').map(Number));
-  applyVideoPreviews(doc);
-  return doc.body.innerHTML;
+  return match
+    ? applyColumnWidths(html, match[1].split(',').map(Number))
+    : html;
 };
 
 const blockClass = type => {

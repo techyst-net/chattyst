@@ -69,12 +69,6 @@ module Enterprise::DeviseOverrides::OmniauthCallbacksController
     request.env['omniauth.auth'] || super
   end
 
-  def omniauth_frontend_url
-    return super unless params[:provider] == 'saml' || params[:strategy] == 'saml'
-
-    GlobalConfigService.load('FRONTEND_URL', 'http://localhost:3000')
-  end
-
   def for_mobile?(relay_state)
     relay_state.to_s.casecmp('mobile').zero?
   end

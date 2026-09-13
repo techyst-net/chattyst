@@ -227,20 +227,19 @@ class Whatsapp::IncomingMessageBaseService
     return if profile_name.blank?
     return if @contact.name == profile_name
 
-    # Only update if current name exactly matches a phone number candidate
+    # Only update if current name exactly matches the phone number or formatted phone number
     return unless contact_name_matches_phone_number?
 
     @contact.update!(name: profile_name)
   end
 
   def contact_name_matches_phone_number?
-    return false if (message_phone_number = whatsapp_phone_number(messages_data.first[:from])).blank?
+    message_phone_number = whatsapp_phone_number(messages_data.first[:from])
+    return false if message_phone_number.blank?
 
-    phone_number_candidates(message_phone_number).any? do |number|
-      phone_number = "+#{number}"
-      formatted_phone_number = TelephoneNumber.parse(phone_number).international_number
-      @contact.name == phone_number || @contact.name == formatted_phone_number
-    end
+    phone_number = "+#{message_phone_number}"
+    formatted_phone_number = TelephoneNumber.parse(phone_number).international_number
+    @contact.name == phone_number || @contact.name == formatted_phone_number
   end
 end
 

@@ -66,7 +66,7 @@ class Api::V1::AuthController < Api::BaseController
   end
 
   def sso_login_page_url(error: nil)
-    frontend_url = GlobalConfigService.load('FRONTEND_URL', 'http://localhost:3000')
+    frontend_url = ENV.fetch('FRONTEND_URL', nil)
     params = { error: error }.compact
 
     query = params.to_query

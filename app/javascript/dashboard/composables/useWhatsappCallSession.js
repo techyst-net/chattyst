@@ -34,9 +34,6 @@ const isInitiatingOutboundReadonly = readonly(isInitiatingOutbound);
 // answers, and we don't want pre-pickup audio in the recording. This flag is
 // flipped to true by armOutboundRecorder() when the ACCEPTED status arrives.
 let recorderArmed = false;
-// This call's recording decision, snapshotted server-side at call creation and
-// carried on every payload that can start a call in this tab.
-let callRecordingEnabled = true;
 
 const ensureRemoteAudioElement = () => {
   if (remoteAudioEl) return remoteAudioEl;
@@ -94,7 +91,6 @@ const waitForIceGatheringComplete = peer =>
   });
 
 const setupRecorder = () => {
-  if (!callRecordingEnabled) return;
   if (!localStream || !remoteStream || mediaRecorder) return;
   // createMediaStreamSource on a stream with no audio tracks wires up to
   // nothing — the recorded mix would be silence. Wait until ontrack fires.
@@ -146,7 +142,6 @@ const cleanup = () => {
   localStream = null;
   remoteStream = null;
   mediaRecorder = null;
-  callRecordingEnabled = true;
   recorderChunks = [];
   audioContext = null;
   activeCallId = null;
@@ -285,23 +280,16 @@ export function useWhatsappCallSession() {
     return pc.localDescription.sdp;
   };
 
-  const acceptIncomingCall = async ({
-    callId,
-    sdpOffer,
-    iceServers,
-    recordingEnabled,
-  }) => {
+  const acceptIncomingCall = async ({ callId, sdpOffer, iceServers }) => {
     // The store may not have sdpOffer yet (the cable broadcast can race the
     // click). Fall back to GET /whatsapp_calls/:id which exposes it.
     let offer = sdpOffer;
     let ice = iceServers;
-    let recording = recordingEnabled;
     if (!offer && callId) {
       try {
         const fresh = await WhatsappCallsAPI.show(callId);
         offer = fresh?.sdp_offer || fresh?.sdpOffer;
         ice = ice || fresh?.ice_servers || fresh?.iceServers;
-        recording = recording ?? fresh?.recording_enabled;
       } catch (e) {
         // eslint-disable-next-line no-console
         console.error(
@@ -324,7 +312,6 @@ export function useWhatsappCallSession() {
       // Inbound: agent's click is the pickup. Arm the recorder before the API
       // round-trip so when ontrack fires (triggered by setRemoteDescription
       // back in prepareInboundAnswer) the recorder is already authorized.
-      callRecordingEnabled = recording !== false;
       recorderArmed = true;
       setupRecorder();
       await WhatsappCallsAPI.accept(callId, sdpAnswer);
@@ -358,7 +345,6 @@ export function useWhatsappCallSession() {
       const response = await WhatsappCallsAPI.initiate(target, sdpOffer);
       if (response?.id) {
         activeCallId = response.id;
-        callRecordingEnabled = response.recording_enabled !== false;
         // A connect webhook that raced ahead of this response was buffered;
         // apply our own by id now that we know it, then drop every buffered
         // answer (concurrent agents' calls aren't ours to apply).

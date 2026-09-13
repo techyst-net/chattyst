@@ -1,14 +1,6 @@
 <script>
 import LoadingState from 'dashboard/components/widgets/LoadingState.vue';
 
-const FETCH_INFO_MESSAGE = 'chatwoot-dashboard-app:fetch-info';
-const APP_CONTEXT_EVENT = 'appContext';
-const DARK_THEME = 'dark';
-const LIGHT_THEME = 'light';
-
-const getCurrentTheme = () =>
-  document.body.classList.contains(DARK_THEME) ? DARK_THEME : LIGHT_THEME;
-
 export default {
   components: {
     LoadingState,
@@ -35,8 +27,6 @@ export default {
     return {
       hasOpenedAtleastOnce: false,
       iframeLoading: true,
-      currentTheme: getCurrentTheme(),
-      themeObserver: null,
     };
   },
   computed: {
@@ -45,12 +35,7 @@ export default {
         conversation: this.currentChat,
         contact: this.$store.getters['contacts/getContact'](this.contactId),
         currentAgent: this.currentAgent,
-        customAttributes: this.customAttributes,
-        theme: this.currentTheme,
       };
-    },
-    customAttributes() {
-      return this.$store.getters['attributes/getAttributes'];
     },
     contactId() {
       return this.currentChat?.meta?.sender?.id;
@@ -61,63 +46,34 @@ export default {
     },
   },
   watch: {
-    isVisible(isVisible) {
-      if (isVisible) {
-        const hasOpened = this.hasOpenedAtleastOnce;
+    isVisible() {
+      if (this.isVisible) {
         this.hasOpenedAtleastOnce = true;
-        if (hasOpened) this.sendContextToFrames();
       }
-    },
-    customAttributes() {
-      this.sendContextToFrames();
     },
   },
   mounted() {
     window.addEventListener('message', this.triggerEvent);
-    this.themeObserver = new MutationObserver(this.onThemeChange);
-    this.themeObserver.observe(document.body, {
-      attributes: true,
-      attributeFilter: ['class'],
-    });
   },
   unmounted() {
     window.removeEventListener('message', this.triggerEvent);
-    this.themeObserver.disconnect();
   },
   methods: {
     triggerEvent(event) {
       if (!this.isVisible) return;
-      if (event.data !== FETCH_INFO_MESSAGE) return;
-
-      const frameIndex = this.config.findIndex((_, index) => {
-        const frameElement = document.getElementById(this.getFrameId(index));
-        return frameElement?.contentWindow === event.source;
-      });
-      if (frameIndex >= 0) this.sendContext(frameIndex);
-    },
-    onThemeChange() {
-      const theme = getCurrentTheme();
-      if (theme === this.currentTheme) return;
-
-      this.currentTheme = theme;
-      this.sendContextToFrames();
+      if (event.data === 'chatwoot-dashboard-app:fetch-info') {
+        this.onIframeLoad(0);
+      }
     },
     getFrameId(index) {
       return `dashboard-app--frame-${this.position}-${index}`;
     },
-    sendContextToFrames() {
-      if (!this.isVisible || this.iframeLoading) return;
-      this.config.forEach((_, index) => this.sendContext(index));
-    },
-    sendContext(index) {
+    onIframeLoad(index) {
       // A possible alternative is to use ref instead of document.getElementById
       // However, when ref is used together with v-for, the ref you get will be
       // an array containing the child components mirroring the data source.
       const frameElement = document.getElementById(this.getFrameId(index));
-      const eventData = {
-        event: APP_CONTEXT_EVENT,
-        data: this.dashboardAppContext,
-      };
+      const eventData = { event: 'appContext', data: this.dashboardAppContext };
       frameElement.contentWindow.postMessage(JSON.stringify(eventData), '*');
       this.iframeLoading = false;
     },
@@ -142,7 +98,7 @@ export default {
         v-if="configItem.type === 'frame' && configItem.url"
         :id="getFrameId(index)"
         :src="configItem.url"
-        @load="() => sendContext(index)"
+        @load="() => onIframeLoad(index)"
       />
     </div>
   </div>
